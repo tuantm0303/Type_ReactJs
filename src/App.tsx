@@ -1,6 +1,13 @@
 import React, { useState } from "react";
-// import "./App.css";
 import Student from "./pages/student";
+
+import { Routes, Route, Link } from "react-router-dom";
+import ClientLayout from "./pages/layouts/clientLayout"
+import AdminLayout from "./pages/layouts/adminLayout";
+import HomePage from "./pages/homepage";
+import ProductAdmin from "./pages/product";
+import AdminHomePage from "./pages/adminHomePage";
+import ProductDetail from "./pages/product/productDetail";
 
 type studentType = {
   name: string;
@@ -34,7 +41,7 @@ function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
+      {/* <header className="App-header">
         <div className="container">
           <form>
             <label htmlFor="exampleInputEmail1" className="form-label">Name</label>
@@ -70,7 +77,33 @@ function App() {
           </form>
         </div>
         <Student rows={student} />
-      </header>
+      </header> */}
+      <div className="navbar">
+        <ul>
+          <li><Link to="/">Client Home</Link></li>
+          <li><Link to="/product">Client Product</Link></li>
+          <li><Link to="/admin">Admin Home</Link></li>
+          <li><Link to="/admin/product">Admin Product</Link></li>
+        </ul>
+      </div>
+
+      <Routes>
+        {/* client */}
+        <Route path="/" element={<ClientLayout />} />
+        <Route path="/product" element={<HomePage />} />
+
+        {/* admin */}
+        <Route path='admin' element={<AdminLayout />}>
+            <Route index element={<AdminHomePage />} />
+            {/* /admin/product */}
+            {/* <Route path='product' element={<Product />} /> */}
+            <Route path='product'>
+              <Route index element={<ProductAdmin />} />
+              <Route path=':id' element={<ProductDetail />} />
+              {/* <Route path=':id/edit' element={<ProductForm />} /> */}
+            </Route>
+        </Route>
+      </Routes>
     </div>
   );
 }
