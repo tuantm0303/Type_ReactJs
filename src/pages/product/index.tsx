@@ -1,9 +1,10 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { getAll } from '../api/product'
 
 function ProductAdmin() {
   type productType = {
+    _id: String | number,
     name: String,
     price: Number,
     desc: String,
@@ -30,6 +31,7 @@ function ProductAdmin() {
               <th>Price</th>
               <th>Desc</th>
               <th>Category</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -39,14 +41,11 @@ function ProductAdmin() {
                 <td>{item.price}</td>
                 <td>{item.desc}</td>
                 <td>{item.categoryId}</td>
+                <td><Link to={`${item._id}`}><button className="btn btn-warning">Detail</button></Link></td>
               </tr>
             ))}
           </tbody>
         </table>
-        <ul>
-          <li><Link to="/products">hehe</Link></li>
-          <li><Link to="/product/:id">hehe</Link></li>
-        </ul>
       </div>
     </div>
   )
