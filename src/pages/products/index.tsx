@@ -1,19 +1,25 @@
 import { useState, useEffect } from 'react'
 import { Link, Outlet } from 'react-router-dom'
-import { list } from '../api/product';
-import { productType } from '../type/product';
+import { list, remove } from '../api/product';
+import type { productType } from '../type/product';
 
 function ProductAdmin() {
 
   const [products, setProducts] = useState<productType[]>([])
   useEffect(() => {
     const getProducts = async () => {
-      const { data } = await list();
-      setProducts(data);
+      const { data } = await list()
+      setProducts(data)
     }
     getProducts();
   }, []);
 
+  const handleRemove = async (id: number) => {
+    remove(id)
+    if (window.confirm('Are you sure delete??')) {
+      setProducts(products.filter(product => product.id !== id))
+    }
+  }
   return (
     <div className="max-w-2xl mx-auto mb-[20px]">
       <Link to={`/product/add`}>ADD</Link>
@@ -39,24 +45,29 @@ function ProductAdmin() {
             </tr>
           </thead>
           <tbody>
-            {products.map((item, index) => (
-              <tr className="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600" key={index}>
+            {products.map(product => (
+              <tr className="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600" key={product.id}>
                 <th scope="row" className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
-                  {item.name}
+                  {product.name}
                 </th>
                 <td className="px-6 py-4">
-                  {item.price}
+                  {product.price}
                 </td>
                 <td className="px-6 py-4">
-                  {item.desc}
+                  {product.desc}
                 </td>
                 <td className="px-6 py-4">
-                  {item.categoryId}
+                  {product.categoryId}
                 </td>
                 <td className="px-6 py-4 text-right">
-                  <Link to="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</Link>
-                  <Link to="#" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Delete</Link>
-                  <Link to={`/product/${item._id}`} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Detail</Link>
+                  <Link to={`/product/${product.id}`} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Detail</Link>
+                  <Link to={`/product/edit/${product.id}`} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</Link>
+                  <button
+                    className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                    onClick={() => handleRemove(product.id)}
+                  >
+                    Delete
+                  </button>
                 </td>
               </tr>
             ))}

@@ -1,0 +1,19 @@
+{
+  "products": [
+    {
+      "name": "SAMSUNG",
+      "price": 465,
+      "id": 7
+    },
+    {
+      "name": "SAMSUNG",
+      "price": 4635,
+      "id": 8
+    },
+    {
+      "name": "SAMSUNG",
+      "price": 34556,
+      "id": 9
+    }
+  ]
+}
