@@ -12,7 +12,6 @@ function ProductDetail(props: Props) {
 
   const getProductDetail = async () => {
     const { data } = await read(id)
-    console.log()
     setProduct(data)
   }
 
