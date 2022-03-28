@@ -34,11 +34,11 @@
   "posts": [
     {
       "id": 1,
-      "title": "Tiêu đề",
+      "title": "Tiêu đề update",
       "desc": "Mô tả",
       "author": "tuantm",
       "category": "Tin tức",
-      "thumbnail": "",
+      "thumbnail": "q",
       "status": 1
     },
     {

@@ -24,7 +24,6 @@ function EditProduct() {
   }, [])
 
   const onSubmit: SubmitHandler<FormInputsName> = async (product) => {
-    console.log(product)
     const { data } = await update(product)
     setProducts([...products, data])
     navigate('/product')
