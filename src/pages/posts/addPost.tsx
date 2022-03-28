@@ -20,7 +20,7 @@ function AddPost() {
   const onSubmit: SubmitHandler<FormInputsName> = async (post: any) => {
     const { data } = await add(post)
     setPosts([...posts, data])
-    navigate('/post')
+    navigate('/admin/post')
   }
 
   return (

@@ -6,11 +6,9 @@ type Props = {}
 
 function PostOutlet({ }: Props) {
   return (
-    <div>
-      <header>HEADER</header>
+    <>
       <Outlet />
-      <footer>FOOTER</footer>
-    </div>
+    </>
   )
 }
 

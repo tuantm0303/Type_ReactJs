@@ -5,11 +5,9 @@ type Props = {}
 
 function ProductOutlet({}: Props) {
   return (
-    <div>
-      <header>HEADER</header>
+    <>
       <Outlet />
-      <footer>FOOTER</footer>
-    </div>
+    </>
   )
 }
 

@@ -1,7 +1,7 @@
 {
   "products": [
     {
-      "name": "SAMSUNG",
+      "name": "dien thoai SAMSUNG ",
       "price": 4635,
       "id": 8
     },
@@ -29,6 +29,11 @@
       "name": "tuan",
       "price": 52136,
       "id": 14
+    },
+    {
+      "name": "afs",
+      "price": 213,
+      "id": 15
     }
   ],
   "posts": [
@@ -67,6 +72,33 @@
       "thumbnail": "thumbnail",
       "status": "2",
       "id": 5
+    },
+    {
+      "title": "32ed3erf nef",
+      "desc": "qeaff3",
+      "author": "rqea",
+      "category": "qre",
+      "thumbnail": "ew",
+      "status": "3",
+      "id": 6
+    },
+    {
+      "title": "32ed3erf nef",
+      "desc": "qeaff3",
+      "author": "rqea",
+      "category": "qre",
+      "thumbnail": "ew",
+      "status": "3",
+      "id": 7
+    },
+    {
+      "title": "32ed3erf nef",
+      "desc": "qeaff3",
+      "author": "rqea",
+      "category": "qre",
+      "thumbnail": "ew",
+      "status": "3",
+      "id": 8
     }
   ]
 }

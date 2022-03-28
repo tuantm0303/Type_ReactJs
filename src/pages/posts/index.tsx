@@ -21,9 +21,10 @@ function PostAdmin() {
     }
   }
   return (
-    <div>
-      <Link to={`/post/add`}>ADD</Link>
-      <div className="relative overflow-x-auto shadow-md sm:rounded-lg">
+    <>
+      <h2 className='text-3xl font-semibold text-center text-gray-800'>Manager Posts</h2>
+      <Link to={`/admin/post/add`} className="border-2 border-blue-500 float-right rounded-lg font-bold text-blue-500 px-3 py-2 transition duration-300 ease-in-out hover:bg-blue-500 hover:text-white mb-5">ADD</Link>
+      <div className="w-full relative overflow-x-auto shadow-md sm:rounded-lg">
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
@@ -45,7 +46,7 @@ function PostAdmin() {
               <th scope="col" className="px-6 py-3">
                 Status
               </th>
-              <th scope="col" className="px-6 py-3">
+              <th scope="col" className="px-6 py-3 text-center">
                 Action
               </th>
             </tr>
@@ -71,11 +72,11 @@ function PostAdmin() {
                 <td className="px-6 py-4">
                   {post.status}
                 </td>
-                <td className="px-6 py-4 text-right">
-                  <Link to={`/post/${post.id}`} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Detail</Link>
-                  <Link to={`/post/edit/${post.id}`} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit</Link>
+                <td className="px-6 py-4 text-center">
+                  <Link to={`/admin/post/${post.id}`} className="bg-blue-500 rounded-lg font-bold text-white text-center px-3 py-2 transition duration-300 ease-in-out hover:bg-blue-600 mr-2">Detail</Link>
+                  <Link to={`/admin/post/edit/${post.id}`} className="bg-blue-500 rounded-lg font-bold text-white text-center px-3 py-2 transition duration-300 ease-in-out hover:bg-blue-600 mr-2">Edit</Link>
                   <button
-                    className="font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                    className="bg-blue-500 rounded-lg font-bold text-white text-center px-3 py-2 transition duration-300 ease-in-out hover:bg-blue-600 mr-2"
                     onClick={() => handleRemove(post.id)}
                   >
                     Delete
@@ -87,7 +88,7 @@ function PostAdmin() {
         </table>
         <Outlet />
       </div>
-    </div>
+    </>
   )
 }
 

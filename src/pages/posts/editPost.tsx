@@ -30,7 +30,7 @@ function EditPost() {
   const onSubmit: SubmitHandler<FormInputsName> = async (post) => {
     const { data } = await update(post)
     setPosts([...posts, data])
-    navigate('/post')
+    navigate('/admin/post')
   }
 
   return (

@@ -16,7 +16,7 @@ function AddProduct() {
   const onSubmit: SubmitHandler<FormInputsName> = async (product: any) => {
     const { data } = await add(product)
     setProducts([...products, data])
-    navigate('/product')
+    navigate('/admin/product')
   }
 
   return (
