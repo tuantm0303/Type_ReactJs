@@ -24,7 +24,7 @@
     "web-vitals": "^2.1.4"
   },
   "scripts": {
-    "server": "json-server-auth --watch db.json --port 8000",
+    "server": "json-server-auth --watch db.json --port 8100",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

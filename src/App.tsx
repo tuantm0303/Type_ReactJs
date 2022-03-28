@@ -1,4 +1,3 @@
-import React from "react";
 import { Routes, Route, Link } from "react-router-dom";
 import PostOutlet from "./pages/posts/PostOutliet";
 import ProductAdmin from "./pages/products";
@@ -9,6 +8,7 @@ import ProductDetail from "./pages/products/productDetail";
 import ProductOutlet from "./pages/products/ProductOutlet";
 import PostDetail from "./pages/posts/PostDetail";
 import EditProduct from "./pages/products/editProduct";
+import EditPost from "./pages/posts/editPost";
 
 function App() {
   return (
@@ -33,7 +33,7 @@ function App() {
         <Route path="post" element={<PostOutlet />}>
           <Route index element={<PostAdmin />} />
           <Route path="add" element={<AddPost />} />
-          {/* <Route path="edit/:id" element={<EditPost />} /> */}
+          <Route path="edit/:id" element={<EditPost />} />
           <Route path=":id" element={<PostDetail />} />
         </Route>
       </Routes>

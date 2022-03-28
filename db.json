@@ -2,11 +2,6 @@
   "products": [
     {
       "name": "SAMSUNG",
-      "price": 465,
-      "id": 7
-    },
-    {
-      "name": "SAMSUNG",
       "price": 4635,
       "id": 8
     },
@@ -34,6 +29,44 @@
       "name": "tuan",
       "price": 52136,
       "id": 14
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "Tiêu đề",
+      "desc": "Mô tả",
+      "author": "tuantm",
+      "category": "Tin tức",
+      "thumbnail": "",
+      "status": 1
+    },
+    {
+      "title": "tieu de 2",
+      "desc": "tin tức",
+      "author": "minhtuan update",
+      "category": "Tin tức 2",
+      "thumbnail": "a",
+      "status": "2",
+      "id": 2
+    },
+    {
+      "title": "ewwr",
+      "desc": "rqewe",
+      "author": "qưe",
+      "category": "qưeqwe",
+      "thumbnail": "qưeqweq",
+      "status": "1",
+      "id": 4
+    },
+    {
+      "title": "title",
+      "desc": "desc",
+      "author": "author",
+      "category": "category",
+      "thumbnail": "thumbnail",
+      "status": "2",
+      "id": 5
     }
   ]
 }
