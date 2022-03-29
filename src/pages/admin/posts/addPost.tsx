@@ -1,7 +1,7 @@
-import { useEffect, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
-import { read, update } from '../api/post'
-import type { postType } from '../type/post'
+import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
+import { add } from '../../api/post'
+import { postType } from '../../type'
 import { useForm, SubmitHandler } from "react-hook-form";
 
 type FormInputsName = {
@@ -13,22 +13,12 @@ type FormInputsName = {
   status: string,
 }
 
-function EditPost() {
+function AddPost() {
   const [posts, setPosts] = useState<postType[]>([])
-  const { reset, register, handleSubmit, formState: { errors } } = useForm<FormInputsName>()
+  const { register, handleSubmit, formState: { errors } } = useForm<FormInputsName>()
   const navigate = useNavigate()
-  const { id } = useParams()
-
-  useEffect(() => {
-    const readPost = async (id: any) => {
-      const { data } = await read(id)
-      reset(data)
-    }
-    readPost(id)
-  }, [])
-
-  const onSubmit: SubmitHandler<FormInputsName> = async (post) => {
-    const { data } = await update(post)
+  const onSubmit: SubmitHandler<FormInputsName> = async (post: any) => {
+    const { data } = await add(post)
     setPosts([...posts, data])
     navigate('/admin/post')
   }
@@ -94,11 +84,11 @@ function EditPost() {
         <button
           className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
         >
-          UPDATE
+          ADD
         </button>
       </form>
     </div>
   )
 }
 
-export default EditPost
+export default AddPost

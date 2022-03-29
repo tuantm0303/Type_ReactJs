@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link, Outlet } from 'react-router-dom'
-import { list, remove } from '../api/product';
-import type { productType } from '../type/product';
+import { list, remove } from '../../api/product'
+import type { productType } from '../../type'
 
 function ProductAdmin() {
 

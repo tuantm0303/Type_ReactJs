@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link, Outlet } from 'react-router-dom'
-import { list, remove } from '../api/post'
-import { postType } from '../type/post'
+import { list, remove } from '../../api/post'
+import { postType } from '../../type'
 
 function PostAdmin() {
   const [posts, setPosts] = useState<postType[]>([])

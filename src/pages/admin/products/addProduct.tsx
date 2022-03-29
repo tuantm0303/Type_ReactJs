@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { add } from '../api/product'
-import { productType } from '../type/product'
+import { add } from '../../api/product'
+import { productType } from '../../type'
 import { useForm, SubmitHandler } from "react-hook-form";
 
 type FormInputsName = {

@@ -1,14 +1,14 @@
 import { Routes, Route, Link } from "react-router-dom";
-import PostOutlet from "./pages/posts/PostOutliet";
-import ProductAdmin from "./pages/products";
-import PostAdmin from "./pages/posts";
-import AddProduct from "./pages/products/addProduct";
-import AddPost from "./pages/posts/addPost";
-import ProductDetail from "./pages/products/productDetail";
-import ProductOutlet from "./pages/products/ProductOutlet";
-import PostDetail from "./pages/posts/PostDetail";
-import EditProduct from "./pages/products/editProduct";
-import EditPost from "./pages/posts/editPost";
+import PostOutlet from "./pages/admin/posts/PostOutliet";
+import ProductAdmin from "./pages/admin/products";
+import PostAdmin from "./pages/admin/posts";
+import AddProduct from "./pages/admin/products/addProduct";
+import AddPost from "./pages/admin/posts/addPost";
+import ProductDetail from "./pages/admin/products/productDetail";
+import ProductOutlet from "./pages/admin/products/ProductOutlet";
+import PostDetail from "./pages/admin/posts/PostDetail";
+import EditProduct from "./pages/admin/products/editProduct";
+import EditPost from "./pages/admin/posts/editPost";
 import Admin from "./pages/admin";
 
 function App() {
@@ -17,12 +17,13 @@ function App() {
       <div className="navbar">
         <ul>
           <li><Link to="/">Home</Link></li>
-          <li><Link to="/admin">Admin</Link></li>
+          <li><Link to="/admin/post">Admin</Link></li>
         </ul>
       </div>
       <Routes>
-        {/* product */}
+        {/* <Route path="/" element={<WebsiteLayout />} /> */}
         <Route path="admin" element={<Admin />}>
+          {/* product */}
           <Route path="product" element={<ProductOutlet />}>
             <Route index element={<ProductAdmin />} />
             <Route path="add" element={<AddProduct />} />
