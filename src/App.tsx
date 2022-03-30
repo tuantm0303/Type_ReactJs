@@ -10,18 +10,13 @@ import PostDetail from "./pages/admin/posts/PostDetail";
 import EditProduct from "./pages/admin/products/editProduct";
 import EditPost from "./pages/admin/posts/editPost";
 import Admin from "./pages/admin";
+import ClientPage from "./pages/client";
 
 function App() {
   return (
     <div className="App">
-      <div className="navbar">
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/admin/post">Admin</Link></li>
-        </ul>
-      </div>
       <Routes>
-        {/* <Route path="/" element={<WebsiteLayout />} /> */}
+        <Route path="/" element={<ClientPage />} />
         <Route path="admin" element={<Admin />}>
           {/* product */}
           <Route path="product" element={<ProductOutlet />}>
@@ -40,7 +35,13 @@ function App() {
           </Route>
         </Route>
       </Routes>
-
+      
+      <div className="navbar">
+        <ul>
+          <li><Link to="/">Home</Link></li>
+          <li><Link to="/admin/post">Admin</Link></li>
+        </ul>
+      </div>
     </div>
   );
 }
