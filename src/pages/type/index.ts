@@ -1,9 +1,13 @@
 export type productType = {
   id: number,
-  name: string,
-  price: number,
+  title: string,
+  image: string,
+  priceOld: number,
+  priceNew: number,
+  sale: string,
   desc: string,
-  categoryId: string
+  status: number,
+  categoryId: number
 }
 
 export type postType = {
@@ -14,4 +18,9 @@ export type postType = {
   category: string,
   thumbnail: string,
   status: string,
+}
+
+export type categoryType = {
+  id: number,
+  name: string,
 }

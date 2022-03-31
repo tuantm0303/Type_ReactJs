@@ -1,39 +1,81 @@
 {
   "products": [
     {
-      "name": "dien thoai SAMSUNG ",
-      "price": 4635,
-      "id": 8
+      "id": 8,
+      "title": "dien thoai SAMSUNG ",
+      "image": "",
+      "priceOld": 4635,
+      "priceNew": 4635,
+      "sale": "",
+      "desc": "Mô tả",
+      "status": 1,
+      "categoryId": 1
     },
     {
-      "name": "SAMSUNG",
-      "price": 34556,
-      "id": 9
+      "id": 9,
+      "title": "SAMSUNG",
+      "image": "",
+      "priceOld": 34556,
+      "priceNew": 34556,
+      "sale": "",
+      "desc": "Mô tả",
+      "status": 1,
+      "categoryId": 1
     },
     {
-      "name": "ewtwrer",
-      "price": 3445,
-      "id": 10
+      "id": 10,
+      "title": "ewtwrer",
+      "image": "",
+      "priceOld": 3445,
+      "priceNew": 3445,
+      "sale": "",
+      "desc": "Mô tả",
+      "status": 1,
+      "categoryId": 1
     },
     {
-      "name": "iphone",
-      "price": 33333333333333,
-      "id": 11
+      "id": 11,
+      "title": "iphone",
+      "image": "",
+      "priceOld": 33333333333333,
+      "priceNew": 33333333333333,
+      "sale": "",
+      "desc": "Mô tả",
+      "status": 1,
+      "categoryId": 1
     },
     {
-      "name": "rfe4revdd",
-      "price": 345,
-      "id": 12
+      "id": 12,
+      "title": "rfe4revdd",
+      "image": "",
+      "priceOld": 345,
+      "priceNew": 345,
+      "sale": "",
+      "desc": "Mô tả",
+      "status": 1,
+      "categoryId": 1
     },
     {
-      "name": "tuan",
-      "price": 52136,
-      "id": 14
+      "id": 14,
+      "title": "tuan",
+      "image": "",
+      "priceOld": 52136,
+      "priceNew": 52136,
+      "sale": "",
+      "desc": "Mô tả",
+      "status": 1,
+      "categoryId": 1
     },
     {
-      "name": "afs",
-      "price": 213,
-      "id": 15
+      "id": 15,
+      "title": "afs",
+      "image": [],
+      "priceOld": 213,
+      "priceNew": 213,
+      "sale": "",
+      "desc": "Mô tả",
+      "status": 1,
+      "categoryId": 1
     }
   ],
   "posts": [
@@ -90,6 +132,28 @@
       "thumbnail": "3rf",
       "status": "23",
       "id": 9
+    }
+  ],
+  "categorys": [
+    {
+      "id": 1,
+      "name": "Samsung"
+    },
+    {
+      "id": 2,
+      "name": "Iphone"
+    },
+    {
+      "id": 3,
+      "name": "Huawei"
+    },
+    {
+      "id": 4,
+      "name": "Xiaomi"
+    },
+    {
+      "id": 5,
+      "name": "Oppo"
     }
   ]
 }

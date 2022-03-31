@@ -21,8 +21,8 @@ function ProductDetail(props: Props) {
   
   return (
     <div className='bg-red-500 text-center'>
-      <h2>Name: {product?.name}</h2>
-      <h2>Price: {product?.price}</h2>
+      <h2>Name: {product?.title}</h2>
+      <h2>Price: {product?.priceOld}</h2>
       <h2>Description: {product?.desc}</h2>
     </div>
   );

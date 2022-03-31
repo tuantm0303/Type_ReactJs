@@ -49,10 +49,10 @@ function ProductAdmin() {
             {products.map(product => (
               <tr className="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600" key={product.id}>
                 <th scope="row" className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
-                  {product.name}
+                  {product.title}
                 </th>
                 <td className="px-6 py-4">
-                  {product.price}
+                  {product.priceOld}
                 </td>
                 <td className="px-6 py-4">
                   {product.desc}
