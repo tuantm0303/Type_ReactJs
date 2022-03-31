@@ -4,14 +4,14 @@ function Header() {
   return (
     <header className="header-main px-[10%] text-center h-[100px]">
       <div className="row-menu flex justify-between">
-        <div className="logo"><Link to=""><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/99/e9/b9/99e9b974-b824-15c3-1eea-59669fa296d6/AppIconSSPV6-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/1200x630wa.png" alt="" className="logo-img h-[100px] " /></Link></div>
+        <div className="logo"><Link to="#"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/99/e9/b9/99e9b974-b824-15c3-1eea-59669fa296d6/AppIconSSPV6-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/1200x630wa.png" alt="" className="logo-img h-[100px] " /></Link></div>
         <div className="nav-menu">
           <ul className='flex p-5 text-center leading-[50px]'>
-            <li className='px-5 mx-2 hover:opacity-70 font-semibold'><Link to="" className='hover:border-b-2 hover:border-solid hover:border-blue-400'>Sculpture</Link></li>
-            <li className='px-5 mx-2 hover:opacity-70 font-semibold'><Link to="" className='hover:border-b-2 hover:border-solid hover:border-blue-400'>Frames</Link></li>
-            <li className='px-5 mx-2 hover:opacity-70 font-semibold'><Link to="" className='hover:border-b-2 hover:border-solid hover:border-blue-400'>Relief</Link></li>
-            <li className='px-5 mx-2 hover:opacity-70 font-semibold'><Link to="" className='hover:border-b-2 hover:border-solid hover:border-blue-400'>Statue</Link></li>
-            <li className='px-5 mx-2 hover:opacity-70 font-semibold'><Link to="" className='hover:border-b-2 hover:border-solid hover:border-blue-400'>More</Link></li>
+            <li className='px-5 mx-2 hover:opacity-70 font-semibold'><Link to="#" className='hover:border-b-2 hover:border-solid hover:border-blue-400'>Sculpture</Link></li>
+            <li className='px-5 mx-2 hover:opacity-70 font-semibold'><Link to="#" className='hover:border-b-2 hover:border-solid hover:border-blue-400'>Frames</Link></li>
+            <li className='px-5 mx-2 hover:opacity-70 font-semibold'><Link to="#" className='hover:border-b-2 hover:border-solid hover:border-blue-400'>Relief</Link></li>
+            <li className='px-5 mx-2 hover:opacity-70 font-semibold'><Link to="#" className='hover:border-b-2 hover:border-solid hover:border-blue-400'>Statue</Link></li>
+            <li className='px-5 mx-2 hover:opacity-70 font-semibold'><Link to="#" className='hover:border-b-2 hover:border-solid hover:border-blue-400'>More</Link></li>
           </ul>
         </div>
         <div className="menu-icon flex my-[30px]">
