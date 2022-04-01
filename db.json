@@ -1,5 +1,19 @@
 {
-  "products": [],
+  "products": [
+    {
+      "title": "rereqweq",
+      "image": {
+        "0": {}
+      },
+      "priceOld": 34,
+      "priceNew": 34,
+      "sale": 3,
+      "desc": "3efee",
+      "status": 2,
+      "categoryId": 3,
+      "id": 1
+    }
+  ],
   "posts": [
     {
       "id": 1,
@@ -38,15 +52,6 @@
       "id": 5
     },
     {
-      "title": "32ed3erf nef",
-      "desc": "qeaff3",
-      "author": "rqea",
-      "category": "qre",
-      "thumbnail": "ew",
-      "status": "3",
-      "id": 6
-    },
-    {
       "title": "xNguyenVanLinh",
       "desc": "ewt",
       "author": "7qtf",
@@ -58,8 +63,24 @@
   ],
   "categories": [
     {
-      "name": "etfwrfg",
+      "name": "Samsung",
       "id": 1
+    },
+    {
+      "name": "Iphone",
+      "id": 2
+    },
+    {
+      "name": "Huewai",
+      "id": 3
+    },
+    {
+      "name": "Xiaomi",
+      "id": 4
+    },
+    {
+      "name": "Oppo",
+      "id": 5
     }
   ]
 }
