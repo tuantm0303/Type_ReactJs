@@ -17,8 +17,8 @@ function BookAdmin() {
   const handleRemove = async (id: number) => {
     if (window.confirm('Are you sure delete??')) {
       setBooks(books.filter(book => book.id !== id))
+      remove(id)
     }
-    remove(id)
   }
   return (
     <>

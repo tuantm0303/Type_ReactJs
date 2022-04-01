@@ -60,6 +60,14 @@
     {
       "name": "Giáo dục",
       "id": 1
+    },
+    {
+      "name": "Truyện",
+      "id": 2
+    },
+    {
+      "name": "Kinh tế",
+      "id": 3
     }
   ],
   "books": [
@@ -70,10 +78,16 @@
       "price": 10000
     },
     {
-      "name": "wrfw3werfw",
-      "price": 32434,
-      "categoryId": 1,
+      "name": "Làm giàu",
+      "price": 10000000,
+      "categoryId": 3,
       "id": 2
+    },
+    {
+      "name": "One Piece",
+      "price": 20000,
+      "categoryId": 2,
+      "id": 3
     }
   ]
 }
