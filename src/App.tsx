@@ -15,18 +15,22 @@ import CategoryOutlet from "./pages/admin/categories/CategoryOutlet";
 import CategoryAdmin from "./pages/admin/categories";
 import FormCategory from "./pages/admin/categories/FormCategory";
 import CategoryDetail from "./pages/admin/posts/PostDetail";
+import SignIn from "./components/SignIn";
+import SignUp from "./components/SignUp";
 
 function App() {
   return (
     <div className="App">
       <Routes>
         <Route path="/" element={<ClientPage />} />
+        <Route path="/signin" element={<SignIn />} />
+        <Route path="/signup" element={<SignUp />} />
         <Route path="admin" element={<Admin />}>
           {/* category */}
           <Route path="category" element={<CategoryOutlet />}>
             <Route index element={<CategoryAdmin />} />
             <Route path="add" element={<FormCategory />} />
-            <Route path="edit/:id" element={<FormCategory />} />  
+            <Route path="edit/:id" element={<FormCategory />} />
             <Route path=":id" element={<CategoryDetail />} />
           </Route>
 
@@ -47,7 +51,7 @@ function App() {
           </Route>
         </Route>
       </Routes>
-      
+
       <div className="navbar">
         <ul>
           <li><Link to="/">Home</Link></li>

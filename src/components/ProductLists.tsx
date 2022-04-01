@@ -52,7 +52,7 @@ function ProductLists() {
             </div>
             <div className="pro-img overflow-hidden">
               <Link to="#">
-                <img src="https://mcdn2-coolmate.cdn.vccloud.vn/uploads/November2021/uBT5A9094_copy_450x663.jpg" alt="https://mcdn2-coolmate.cdn.vccloud.vn/uploads/November2021/uBT5A9094_copy_450x663.jpg" className="w-[385px] h-[261] group-hover:hidden" />
+                <img src={product.image} alt={product.image} className="w-[385px] h-[261] group-hover:hidden" />
                 <img src="https://mcdn2-coolmate.cdn.vccloud.vn/uploads/December2021/densoro_copy_450x663.jpg" alt="https://mcdn2-coolmate.cdn.vccloud.vn/uploads/December2021/densoro_copy_450x663.jpg" className="w-[385px] h-[261] hidden group-hover:block group-hover:filter group-hover:scale-125 transition-all transform duration-500 object-cover z-10" />
               </Link>
             </div>
@@ -66,9 +66,9 @@ function ProductLists() {
               <h3 className="product-title font-semibold">{product.title}</h3>
               <div className="product-price">
                 <div rel-script="product-price" className="product-prices flex">
-                  <ins className="text-red-500 text-sm pr-5">priceNew</ins>
-                  <del className="text-xs">priceOld</del>
-                  <span className="text-red-500 text-sm px-5">sale</span>
+                  <ins className="text-red-500 text-sm pr-5">{product.priceNew}</ins>
+                  <del className="text-xs">{product.priceOld}</del>
+                  <span className="text-red-500 text-sm px-5">{product.sale}</span>
                 </div>
               </div>
             </div>

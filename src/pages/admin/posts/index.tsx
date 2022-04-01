@@ -15,9 +15,9 @@ function PostAdmin() {
   }, [])
 
   const handleRemove = async (id: number) => {
-    remove(id)
     if (window.confirm('Are you sure delete??')) {
       setPosts(posts.filter(post => post.id !== id))
+      remove(id)
     }
   }
   return (

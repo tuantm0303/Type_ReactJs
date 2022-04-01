@@ -15,9 +15,9 @@ function ProductAdmin() {
   }, []);
 
   const handleRemove = async (id: number) => {
-    remove(id)
     if (window.confirm('Are you sure delete??')) {
       setProducts(products.filter(product => product.id !== id))
+      remove(id)
     }
   }
   return (
@@ -67,7 +67,7 @@ function ProductAdmin() {
                   {product.title}
                 </th>
                 <th scope="row" className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
-                  {product.image}
+                  <img className='w-[110px] h-[261]' src={product.image} alt={product.image} />
                 </th>
                 <th scope="row" className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
                   {product.priceOld}

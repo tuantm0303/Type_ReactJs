@@ -15,9 +15,9 @@ function CategoryAdmin() {
   }, [])
 
   const handleRemove = async (id: number) => {
-    remove(id)
     if (window.confirm('Are you sure delete??')) {
       setCategories(categories.filter(category => category.id !== id))
+      remove(id)
     }
   }
   return (

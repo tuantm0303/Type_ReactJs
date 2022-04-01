@@ -42,6 +42,7 @@ function AddProduct() {
         <div className="relative z-0 mb-6 w-full group">
           <input
             type="text"
+            multiple
             placeholder='Image'
             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600"
             {...register("image", { required: true })}
@@ -62,7 +63,7 @@ function AddProduct() {
             type="number"
             placeholder='PriceNew'
             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600"
-            {...register("priceNew", { required: true, valueAsNumber: true })} //valueAsNumber convert number
+          // {...register("priceNew", { required: true, valueAsNumber: true })} //valueAsNumber convert number
           />
           {errors.priceNew && <span style={{ color: "red" }}>This field is required</span>}
         </div>
@@ -71,7 +72,7 @@ function AddProduct() {
             type="number"
             placeholder='Sale'
             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600"
-            {...register("sale", { required: true, valueAsNumber: true })} //valueAsNumber convert number
+          // {...register("sale", { required: true, valueAsNumber: true })} //valueAsNumber convert number
           />
           {errors.sale && <span style={{ color: "red" }}>This field is required</span>}
         </div>
