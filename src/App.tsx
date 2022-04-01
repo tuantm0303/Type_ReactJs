@@ -11,6 +11,10 @@ import EditProduct from "./pages/admin/products/editProduct";
 import EditPost from "./pages/admin/posts/editPost";
 import Admin from "./pages/admin";
 import ClientPage from "./pages/client";
+import CategoryOutlet from "./pages/admin/categories/CategoryOutlet";
+import CategoryAdmin from "./pages/admin/categories";
+import FormCategory from "./pages/admin/categories/FormCategory";
+import CategoryDetail from "./pages/admin/posts/PostDetail";
 
 function App() {
   return (
@@ -18,6 +22,14 @@ function App() {
       <Routes>
         <Route path="/" element={<ClientPage />} />
         <Route path="admin" element={<Admin />}>
+          {/* category */}
+          <Route path="category" element={<CategoryOutlet />}>
+            <Route index element={<CategoryAdmin />} />
+            <Route path="add" element={<FormCategory />} />
+            <Route path="edit/:id" element={<FormCategory />} />  
+            <Route path=":id" element={<CategoryDetail />} />
+          </Route>
+
           {/* product */}
           <Route path="product" element={<ProductOutlet />}>
             <Route index element={<ProductAdmin />} />
