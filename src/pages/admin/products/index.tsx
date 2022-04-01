@@ -29,15 +29,27 @@ function ProductAdmin() {
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
               <th scope="col" className="px-6 py-3">
-                Name
+                STT
               </th>
               <th scope="col" className="px-6 py-3">
-                Price
+                Title
               </th>
               <th scope="col" className="px-6 py-3">
-                Description
+                Image
               </th>
               <th scope="col" className="px-6 py-3">
+                PriceOld
+              </th>
+              <th scope="col" className="px-6 py-3">
+                PriceNew
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Sale
+              </th>
+              <th scope="col" className="px-6 py-3">
+                Status
+              </th>
+              <th scope="col" className="px-6 py-3 text-center">
                 CategoryId
               </th>
               <th scope="col" className="px-6 py-3 text-center">
@@ -49,18 +61,30 @@ function ProductAdmin() {
             {products.map(product => (
               <tr className="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600" key={product.id}>
                 <th scope="row" className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+                  {product.id}
+                </th>
+                <th scope="row" className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
                   {product.title}
                 </th>
-                <td className="px-6 py-4">
+                <th scope="row" className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+                  {product.image}
+                </th>
+                <th scope="row" className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
                   {product.priceOld}
-                </td>
+                </th>
+                <th scope="row" className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+                  {product.priceNew}
+                </th>
+                <th scope="row" className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+                  {product.sale}
+                </th>
                 <td className="px-6 py-4">
-                  {product.desc}
+                  {product.status}
                 </td>
                 <td className="px-6 py-4">
                   {product.categoryId}
                 </td>
-                <td className="px-6 py-4 text-center">
+                <td className="px-6 py-4 text-center flex justify-between">
                   <Link to={`/admin/product/${product.id}`} className="bg-blue-500 rounded-lg font-bold text-white text-center px-3 py-2 transition duration-300 ease-in-out hover:bg-blue-600 mr-2">Detail</Link>
                   <Link to={`/admin/product/edit/${product.id}`} className="bg-blue-500 rounded-lg font-bold text-white text-center px-3 py-2 transition duration-300 ease-in-out hover:bg-blue-600 mr-2">Edit</Link>
                   <button

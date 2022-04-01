@@ -34,17 +34,6 @@
       "categoryId": 1
     },
     {
-      "id": 11,
-      "title": "iphone",
-      "image": "",
-      "priceOld": 33333333333333,
-      "priceNew": 33333333333333,
-      "sale": "",
-      "desc": "Mô tả",
-      "status": 1,
-      "categoryId": 1
-    },
-    {
       "id": 12,
       "title": "rfe4revdd",
       "image": "",
@@ -76,6 +65,28 @@
       "desc": "Mô tả",
       "status": 1,
       "categoryId": 1
+    },
+    {
+      "title": "title",
+      "image": "img",
+      "priceOld": 2,
+      "priceNew": 1,
+      "sale": 1,
+      "desc": "desc",
+      "status": 1,
+      "categoryId": 1,
+      "id": 16
+    },
+    {
+      "title": "aáddád",
+      "image": "a",
+      "priceOld": 2,
+      "priceNew": 2,
+      "sale": 1,
+      "desc": "a",
+      "status": 2,
+      "categoryId": 3,
+      "id": 17
     }
   ],
   "posts": [
