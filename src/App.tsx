@@ -15,6 +15,10 @@ import CategoryOutlet from "./pages/admin/categories/CategoryOutlet";
 import CategoryAdmin from "./pages/admin/categories";
 import FormCategory from "./pages/admin/categories/FormCategory";
 import CategoryDetail from "./pages/admin/posts/PostDetail";
+import BookOutlet from "./pages/admin/books/BookOutlet";
+import BookAdmin from "./pages/admin/books";
+import FormBook from "./pages/admin/books/FormBook";
+import BookDetail from "./pages/admin/books/BookDetail";
 
 function App() {
   return (
@@ -28,6 +32,14 @@ function App() {
             <Route path="add" element={<FormCategory />} />
             <Route path="edit/:id" element={<FormCategory />} />  
             <Route path=":id" element={<CategoryDetail />} />
+          </Route>
+
+          {/* book */}
+          <Route path="book" element={<BookOutlet />}>
+            <Route index element={<BookAdmin />} />
+            <Route path="add" element={<FormBook />} />
+            <Route path="edit/:id" element={<FormBook />} />  
+            <Route path=":id" element={<BookDetail />} />
           </Route>
 
           {/* product */}

@@ -24,3 +24,10 @@ export type categoryType = {
   id: number,
   name: string,
 }
+
+export type bookType = {
+  id: number,
+  categoryId: number,
+  name: string,
+  price: number
+}

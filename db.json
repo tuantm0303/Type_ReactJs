@@ -58,8 +58,22 @@
   ],
   "categories": [
     {
-      "name": "etfwrfg",
+      "name": "Giáo dục",
       "id": 1
+    }
+  ],
+  "books": [
+    {
+      "id": 1,
+      "categoryId": 1,
+      "name": "Giáo dục công dân",
+      "price": 10000
+    },
+    {
+      "name": "wrfw3werfw",
+      "price": 32434,
+      "categoryId": 1,
+      "id": 2
     }
   ]
 }
