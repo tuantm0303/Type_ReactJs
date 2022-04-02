@@ -89,7 +89,7 @@ function AddProduct() {
         <div className="relative z-0 mb-6 w-full group">
           <div className="grid xl:grid-cols-2 xl:gap-6">
             <div className="relative z-0 mb-6 w-full group">
-              <select id="status" {...register("status", { required: true, valueAsNumber: true })} className='form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-400 border-0 border-b-2 border-gray-500 bg-white bg-clip-padding bg-no-repeat transition ease-in-out m-0 focus:text-gray-700 text-sm focus:bg-white focus:border-blue-600 focus:outline-none'>
+              <select id="status" {...register("status", { required: true, valueAsNumber: true })} className='form-select appearance-none block w-full px-3 py-1.5 font-normal text-gray-400 border-0 border-b-2 border-gray-500 bg-white bg-clip-padding bg-no-repeat transition ease-in-out m-0 focus:text-gray-700 text-sm focus:bg-white focus:border-blue-600 focus:outline-none'>
                 <option value="">Status</option>
                 <option value="1">Kích hoạt</option>
                 <option value="2" >Chưa kích hoạt</option>
@@ -98,7 +98,7 @@ function AddProduct() {
             </div>
 
             <div className="relative z-0 mb-6 w-full group">
-              <select {...register("categoryId", { required: true, valueAsNumber: true })} id="categoryId" className='form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-400 border-0 border-b-2 border-gray-500 bg-white bg-clip-padding bg-no-repeat transition ease-in-out m-0 focus:text-gray-700 text-sm focus:bg-white focus:border-blue-600 focus:outline-none'>
+              <select {...register("categoryId", { required: true, valueAsNumber: true })} id="categoryId" className='form-select appearance-none block w-full px-3 py-1.5 font-normal text-gray-400 border-0 border-b-2 border-gray-500 bg-white bg-clip-padding bg-no-repeat transition ease-in-out m-0 focus:text-gray-700 text-sm focus:bg-white focus:border-blue-600 focus:outline-none'>
                 <option value="">CategoryId</option>
                 <option value="1">Samsung</option>
                 <option value="2">Iphone</option>

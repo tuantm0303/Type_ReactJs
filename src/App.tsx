@@ -17,6 +17,8 @@ import FormCategory from "./pages/admin/categories/FormCategory";
 import CategoryDetail from "./pages/admin/posts/PostDetail";
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
+import UserOutlet from "./pages/admin/users/userOutlet";
+import UserAdmin from "./pages/admin/users";
 
 function App() {
   return (
@@ -32,6 +34,12 @@ function App() {
             <Route path="add" element={<FormCategory />} />
             <Route path="edit/:id" element={<FormCategory />} />
             <Route path=":id" element={<CategoryDetail />} />
+          </Route>
+
+          {/* user */}
+          <Route path="user" element={<UserOutlet />}>
+            <Route index element={<UserAdmin />} />
+            <Route path="add" element={<FormCategory />} />
           </Route>
 
           {/* product */}

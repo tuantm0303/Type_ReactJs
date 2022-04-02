@@ -12,7 +12,7 @@ function Admin() {
               <Link to="post"><div className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-gray-700 hover:text-blue-300">Post</div></Link>
               <Link to="product"><div className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-gray-700 hover:text-blue-300">Product</div></Link>
               <Link to="category"><div className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-gray-700 hover:text-blue-300">Category</div></Link>
-              {/* <Link to="user"><div className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-gray-700 hover:text-blue-300">User</div></Link> */}
+              <Link to="user"><div className="bg-gray-900 text-white p-2 rounded mt-2 cursor-pointer hover:bg-gray-700 hover:text-blue-300">User</div></Link>
             </div>
 
             <div className="flex p-3 text-white bg-red-500 rounded cursor-pointer text-center text-sm mt-2">

@@ -10,6 +10,50 @@
       "status": 1,
       "categoryId": 2,
       "id": 1
+    },
+    {
+      "title": "iPhone 13 Pro Max 128GB",
+      "image": "https://cdn.tgdd.vn/Products/Images/42/230529/iphone-13-pro-max-gold-1-600x600.jpg",
+      "priceOld": 33990000,
+      "priceNew": null,
+      "sale": null,
+      "desc": "Thông tin sản phẩm iPhone 13 Pro Max 128 GB - siêu phẩm được mong chờ nhất ở nửa cuối năm 2021 đến từ Apple. Máy có thiết kế không mấy đột phá khi so với người tiền nhiệm, bên trong đây vẫn là một sản phẩm có màn hình siêu đẹp, tần số quét được nâng cấp lên 120 Hz mượt mà, cảm biến camera có kích thước lớn hơn, cùng hiệu năng mạnh mẽ với sức mạnh đến từ Apple A15 Bionic, sẵn sàng cùng bạn chinh phục mọi thử thách. Thiết kế đẳng cấp hàng đầu iPhone mới kế thừa thiết kế đặc trưng từ iPhone 12 Pro Max khi sở hữu khung viền vuông vức, mặt lưng kính cùng màn hình tai thỏ tràn viền nằm ở phía trước.",
+      "status": 1,
+      "categoryId": 2,
+      "id": 2
+    },
+    {
+      "title": "iPhone 13 Pro Max 128GB",
+      "image": "https://cdn.tgdd.vn/Products/Images/42/230529/iphone-13-pro-max-gold-1-600x600.jpg",
+      "priceOld": 33990000,
+      "priceNew": null,
+      "sale": null,
+      "desc": "Thông tin sản phẩm iPhone 13 Pro Max 128 GB - siêu phẩm được mong chờ nhất ở nửa cuối năm 2021 đến từ Apple. Máy có thiết kế không mấy đột phá khi so với người tiền nhiệm, bên trong đây vẫn là một sản phẩm có màn hình siêu đẹp, tần số quét được nâng cấp lên 120 Hz mượt mà, cảm biến camera có kích thước lớn hơn, cùng hiệu năng mạnh mẽ với sức mạnh đến từ Apple A15 Bionic, sẵn sàng cùng bạn chinh phục mọi thử thách. Thiết kế đẳng cấp hàng đầu iPhone mới kế thừa thiết kế đặc trưng từ iPhone 12 Pro Max khi sở hữu khung viền vuông vức, mặt lưng kính cùng màn hình tai thỏ tràn viền nằm ở phía trước.",
+      "status": 1,
+      "categoryId": 2,
+      "id": 3
+    },
+    {
+      "title": "iPhone 13 Pro Max 128GB",
+      "image": "https://cdn.tgdd.vn/Products/Images/42/230529/iphone-13-pro-max-gold-1-600x600.jpg",
+      "priceOld": 33990000,
+      "priceNew": null,
+      "sale": null,
+      "desc": "Thông tin sản phẩm iPhone 13 Pro Max 128 GB - siêu phẩm được mong chờ nhất ở nửa cuối năm 2021 đến từ Apple. Máy có thiết kế không mấy đột phá khi so với người tiền nhiệm, bên trong đây vẫn là một sản phẩm có màn hình siêu đẹp, tần số quét được nâng cấp lên 120 Hz mượt mà, cảm biến camera có kích thước lớn hơn, cùng hiệu năng mạnh mẽ với sức mạnh đến từ Apple A15 Bionic, sẵn sàng cùng bạn chinh phục mọi thử thách. Thiết kế đẳng cấp hàng đầu iPhone mới kế thừa thiết kế đặc trưng từ iPhone 12 Pro Max khi sở hữu khung viền vuông vức, mặt lưng kính cùng màn hình tai thỏ tràn viền nằm ở phía trước.",
+      "status": 1,
+      "categoryId": 2,
+      "id": 4
+    },
+    {
+      "title": "iPhone 13 Pro Max 128GB",
+      "image": "https://cdn.tgdd.vn/Products/Images/42/230529/iphone-13-pro-max-gold-1-600x600.jpg",
+      "priceOld": 33990000,
+      "priceNew": null,
+      "sale": null,
+      "desc": "Thông tin sản phẩm iPhone 13 Pro Max 128 GB - siêu phẩm được mong chờ nhất ở nửa cuối năm 2021 đến từ Apple. Máy có thiết kế không mấy đột phá khi so với người tiền nhiệm, bên trong đây vẫn là một sản phẩm có màn hình siêu đẹp, tần số quét được nâng cấp lên 120 Hz mượt mà, cảm biến camera có kích thước lớn hơn, cùng hiệu năng mạnh mẽ với sức mạnh đến từ Apple A15 Bionic, sẵn sàng cùng bạn chinh phục mọi thử thách. Thiết kế đẳng cấp hàng đầu iPhone mới kế thừa thiết kế đặc trưng từ iPhone 12 Pro Max khi sở hữu khung viền vuông vức, mặt lưng kính cùng màn hình tai thỏ tràn viền nằm ở phía trước.",
+      "status": 1,
+      "categoryId": 2,
+      "id": 5
     }
   ],
   "posts": [
@@ -87,6 +131,12 @@
       "name": "admin",
       "email": "admin@gmail.com",
       "password": "admin"
+    },
+    {
+      "email": "tuan@gmail.com",
+      "password": "$2a$10$.zfEJ8qF.MrC7qWz9BwjFuehL3JV6uWVvUT0r.4RIAFlYpjpvG2Ou",
+      "name": "tuan",
+      "id": 2
     }
   ]
 }
