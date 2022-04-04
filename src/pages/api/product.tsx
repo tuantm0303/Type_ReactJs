@@ -10,17 +10,17 @@ export const add = (product: any) => {
   return instance.post(url, product);
 }
 
-export const remove = (id: number) => {
-  const url = `/products/${id}`;
+export const remove = (_id: number | string) => {
+  const url = `/products/${_id}`;
   return instance.delete(url);
 }
 
-export const read = (id: any) => {
+export const read = (id: number | string | undefined) => {
   const url = `/products/${id}`;
   return instance.get(url);
 }
 
 export const update = (product: any) => {
-  const url = `/products/${product.id}`;
+  const url = `/products/${product._id}`;
   return instance.put(url, product);
 }

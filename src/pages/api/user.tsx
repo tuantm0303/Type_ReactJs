@@ -10,8 +10,8 @@ export const signup = (user: any) => {
   return instance.post(url, user);
 }
 
-export const remove = (id: number) => {
-  const url = `/users/${id}`;
+export const remove = (_id: number | string) => {
+  const url = `/users/${_id}`;
   return instance.delete(url);
 }
 

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { Link, Outlet } from 'react-router-dom'
-import { list, remove } from '../../api/category'
+import { listCate, remove } from '../../api/category'
 import { categoryType } from '../../type'
 
 function CategoryAdmin() {
@@ -8,15 +8,15 @@ function CategoryAdmin() {
 
   useEffect(() => {
     const getCategories = async () => {
-      const { data } = await list()
+      const { data } = await listCate()
       setCategories(data)
     }
     getCategories()
   }, [])
 
-  const handleRemove = async (id: number) => {
+  const handleRemove = async (id: number | string) => {
     if (window.confirm('Are you sure delete??')) {
-      setCategories(categories.filter(category => category.id !== id))
+      setCategories(categories.filter(category => category._id !== id))
       remove(id)
     }
   }
@@ -29,9 +29,6 @@ function CategoryAdmin() {
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
               <th scope="col" className="px-6 py-3">
-                STT
-              </th>
-              <th scope="col" className="px-6 py-3">
                 Name
               </th>
               <th scope="col" className="px-6 py-3">
@@ -41,19 +38,16 @@ function CategoryAdmin() {
           </thead>
           <tbody>
             {categories.map(category => (
-              <tr className="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600" key={category.id}>
-                <th scope="row" className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
-                  {category.id}
-                </th>
+              <tr className="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600" key={category._id}>
                 <td className="px-6 py-4">
                   {category.name}
                 </td>
                 <td className="px-6 py-4 text-center">
-                  <Link to={`/admin/category/${category.id}`} className="bg-blue-500 rounded-lg font-bold text-white text-center px-3 py-2 transition duration-300 ease-in-out hover:bg-blue-600 mr-2">Detail</Link>
-                  <Link to={`/admin/category/edit/${category.id}`} className="bg-blue-500 rounded-lg font-bold text-white text-center px-3 py-2 transition duration-300 ease-in-out hover:bg-blue-600 mr-2">Edit</Link>
+                  <Link to={`/admin/category/${category._id}`} className="bg-blue-500 rounded-lg font-bold text-white text-center px-3 py-2 transition duration-300 ease-in-out hover:bg-blue-600 mr-2">Detail</Link>
+                  <Link to={`/admin/category/edit/${category._id}`} className="bg-blue-500 rounded-lg font-bold text-white text-center px-3 py-2 transition duration-300 ease-in-out hover:bg-blue-600 mr-2">Edit</Link>
                   <button
                     className="bg-blue-500 rounded-lg font-bold text-white text-center px-3 py-2 transition duration-300 ease-in-out hover:bg-blue-600 mr-2"
-                    onClick={() => handleRemove(category.id)}
+                    onClick={() => handleRemove(category._id)}
                   >
                     Delete
                   </button>

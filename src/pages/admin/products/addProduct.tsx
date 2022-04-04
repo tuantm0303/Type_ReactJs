@@ -1,28 +1,42 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { add } from '../../api/product'
-import { productType } from '../../type'
+import type { categoryType, productType } from '../../type'
 import { useForm, SubmitHandler } from "react-hook-form";
+import { listCate } from '../../api/category';
 
 type FormInputsName = {
   title: string,
   image: string,
-  priceOld: number,
   priceNew: number,
+  priceOld: number,
   sale: string,
   desc: string,
   status: number,
-  categoryId: number
+  categoryId: string
 }
 
 function AddProduct() {
   const { register, handleSubmit, formState: { errors } } = useForm<FormInputsName>()
-  const [products, setProducts] = useState<productType[]>([])
   const navigate = useNavigate()
+  const [categories, setCategories] = useState<categoryType[]>([])
+  useEffect(() => {
+    (async () => {
+      const { data } = await listCate()
+      setCategories(data)
+    })()
+  }, [])
+  console.log(categories);
+
   const onSubmit: SubmitHandler<FormInputsName> = async (product: any) => {
-    const { data } = await add(product)
-    setProducts([...products, data])
-    navigate('/admin/product')
+    console.log(product);
+
+    try {
+      const { data } = await add(product)
+      navigate('/admin/product')
+    } catch (error: any) {
+      console.log(error.response.data.error)
+    }
   }
 
   return (
@@ -63,7 +77,7 @@ function AddProduct() {
             type="number"
             placeholder='PriceNew'
             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600"
-          // {...register("priceNew", { required: true, valueAsNumber: true })} //valueAsNumber convert number
+            {...register("priceNew", { valueAsNumber: true })} //valueAsNumber convert number
           />
           {errors.priceNew && <span style={{ color: "red" }}>This field is required</span>}
         </div>
@@ -72,7 +86,7 @@ function AddProduct() {
             type="number"
             placeholder='Sale'
             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600"
-          // {...register("sale", { required: true, valueAsNumber: true })} //valueAsNumber convert number
+            {...register("sale", { valueAsNumber: true })} //valueAsNumber convert number
           />
           {errors.sale && <span style={{ color: "red" }}>This field is required</span>}
         </div>
@@ -98,13 +112,11 @@ function AddProduct() {
             </div>
 
             <div className="relative z-0 mb-6 w-full group">
-              <select {...register("categoryId", { required: true, valueAsNumber: true })} id="categoryId" className='form-select appearance-none block w-full px-3 py-1.5 font-normal text-gray-400 border-0 border-b-2 border-gray-500 bg-white bg-clip-padding bg-no-repeat transition ease-in-out m-0 focus:text-gray-700 text-sm focus:bg-white focus:border-blue-600 focus:outline-none'>
+              <select {...register("categoryId", { required: true })} id="categoryId" className='form-select appearance-none block w-full px-3 py-1.5 font-normal text-gray-400 border-0 border-b-2 border-gray-500 bg-white bg-clip-padding bg-no-repeat transition ease-in-out m-0 focus:text-gray-700 text-sm focus:bg-white focus:border-blue-600 focus:outline-none'>
                 <option value="">CategoryId</option>
-                <option value="1">Samsung</option>
-                <option value="2">Iphone</option>
-                <option value="3">Huawei</option>
-                <option value="4">Xiaomi</option>
-                <option value="5">Oppo</option>
+                {categories.map((category, index) => (
+                  <option key={index} value={category._id}>{category.name}</option>
+                ))}
               </select>
               {errors.categoryId && <span style={{ color: "red" }}>This field is required</span>}
             </div>

@@ -1,13 +1,13 @@
 export type productType = {
-  id: number,
+  _id: number | string,
   title: string,
   image: string,
-  priceOld: number,
   priceNew: number,
+  priceOld: number,
   sale: string,
   desc: string,
   status: number,
-  categoryId: number
+  categoryId: string
 }
 
 export type postType = {
@@ -21,12 +21,12 @@ export type postType = {
 }
 
 export type categoryType = {
-  id: number,
+  _id: number | string,
   name: string,
 }
 
 export type userType = {
-  id: number,
+  _id: number | string,
   name: string,
   email: string,
   password: string,

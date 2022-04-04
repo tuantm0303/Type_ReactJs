@@ -12,7 +12,6 @@ type InputValue = {
 
 function SignIn() {
   const { register, handleSubmit, formState: { errors } } = useForm<InputValue>()
-  const [user, setUser] = useState<userType[]>([])
   const navigate = useNavigate()
   const onSubmit: SubmitHandler<InputValue> = async (data) => {
     await signin(data)
@@ -24,7 +23,7 @@ function SignIn() {
     <div className='grid grid-cols-12'>
       <div className="col-span-4 text-white font-sans font-bold bg-black min-h-screen pl-7">
         <div className="grid grid-rows-6 grid-flow-col min-h-screen items-center justify-items-start">
-          <form onSubmit={handleSubmit(onSubmit)} className="row-span-4 row-start-2 text-4xl">
+          <form onSubmit={handleSubmit(onSubmit)} autoComplete='off' className="row-span-4 row-start-2 text-4xl">
             Sign In
             <div className="pt-10 pr-20">
               <label className="text-sm font-sans font-medium">

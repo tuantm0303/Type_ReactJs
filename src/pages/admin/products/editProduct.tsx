@@ -22,7 +22,7 @@ function EditProduct() {
   const { id } = useParams()
 
   useEffect(() => {
-    const readProduct = async (id: any) => {
+    const readProduct = async (id: number | string | undefined) => {
       const { data } = await read(id)
       reset(data)
     }
@@ -30,6 +30,7 @@ function EditProduct() {
   }, [])
 
   const onSubmit: SubmitHandler<FormInputsName> = async (product) => {
+    console.log(product)
     const { data } = await update(product)
     setProducts([...products, data])
     navigate('/admin/product')
@@ -98,24 +99,24 @@ function EditProduct() {
         <div className="relative z-0 mb-6 w-full group">
           <div className="grid xl:grid-cols-2 xl:gap-6">
             <div className="relative z-0 mb-6 w-full group">
-              <select id="status" {...register("status", { required: true, valueAsNumber: true })} className='form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-400 border-0 border-b-2 border-gray-500 bg-white bg-clip-padding bg-no-repeat transition ease-in-out m-0 focus:text-gray-700 text-sm focus:bg-white focus:border-blue-600 focus:outline-none'>
+              {/* <select id="status" {...register("status", { required: true, valueAsNumber: true })} className='form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-400 border-0 border-b-2 border-gray-500 bg-white bg-clip-padding bg-no-repeat transition ease-in-out m-0 focus:text-gray-700 text-sm focus:bg-white focus:border-blue-600 focus:outline-none'>
                 <option value="">Status</option>
                 <option value="1">Kích hoạt</option>
                 <option value="2" >Chưa kích hoạt</option>
               </select>
-              {errors.status && <span style={{ color: "red" }}>This field is required</span>}
+              {errors.status && <span style={{ color: "red" }}>This field is required</span>} */}
             </div>
 
             <div className="relative z-0 mb-6 w-full group">
-              <select {...register("categoryId", { required: true, valueAsNumber: true })} id="categoryId" className='form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-400 border-0 border-b-2 border-gray-500 bg-white bg-clip-padding bg-no-repeat transition ease-in-out m-0 focus:text-gray-700 text-sm focus:bg-white focus:border-blue-600 focus:outline-none'>
+              {/* <select {...register("categoryId", { required: true, valueAsNumber: true })} id="categoryId" className='form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-400 border-0 border-b-2 border-gray-500 bg-white bg-clip-padding bg-no-repeat transition ease-in-out m-0 focus:text-gray-700 text-sm focus:bg-white focus:border-blue-600 focus:outline-none'>
                 <option value="">CategoryId</option>
                 <option value="1">Samsung</option>
                 <option value="2">Iphone</option>
                 <option value="3">Huawei</option>
                 <option value="4">Xiaomi</option>
                 <option value="5">Oppo</option>
-              </select>
-              {errors.categoryId && <span style={{ color: "red" }}>This field is required</span>}
+              </select> */}
+              {/* {errors.categoryId && <span style={{ color: "red" }}>This field is required</span>} */}
             </div>
           </div>
         </div>

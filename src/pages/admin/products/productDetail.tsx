@@ -18,7 +18,7 @@ function ProductDetail(props: Props) {
   useEffect(() => {
     getProductDetail()
   }, [])
-  
+
   return (
     <div className='bg-red-500 text-center'>
       <h2>Name: {product?.title}</h2>

@@ -14,9 +14,9 @@ function UserAdmin() {
     getUsers();
   }, []);
 
-  const handleRemove = async (id: number) => {
+  const handleRemove = async (id: number | string) => {
     if (window.confirm('Are you sure delete??')) {
-      setUsers(users.filter(user => user.id !== id))
+      setUsers(users.filter(user => user._id !== id))
       remove(id)
     }
   }
@@ -43,9 +43,9 @@ function UserAdmin() {
           </thead>
           <tbody>
             {users.map(user => (
-              <tr className="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600" key={user.id}>
+              <tr className="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600" key={user._id}>
                 <th scope="row" className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
-                  {user.id}
+                  {user._id}
                 </th>
                 <th scope="row" className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
                   {user.name}
@@ -56,7 +56,7 @@ function UserAdmin() {
                 <td className="px-6 py-4 flex justify-evenly">
                   <button
                     className="bg-blue-500 rounded-lg font-bold text-white text-center px-3 py-2 transition duration-300 ease-in-out hover:bg-blue-600"
-                    onClick={() => handleRemove(user.id)}
+                    onClick={() => handleRemove(user._id)}
                   >
                     Delete
                   </button>

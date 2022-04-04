@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link, Outlet } from 'react-router-dom'
 import { list, remove } from '../../api/product'
-import type { productType } from '../../type'
+import type { categoryType, productType } from '../../type'
 
 function ProductAdmin() {
 
@@ -12,11 +12,11 @@ function ProductAdmin() {
       setProducts(data)
     }
     getProducts();
-  }, []);
+  }, [])
 
-  const handleRemove = async (id: number) => {
+  const handleRemove = async (id: number | string) => {
     if (window.confirm('Are you sure delete??')) {
-      setProducts(products.filter(product => product.id !== id))
+      setProducts(products.filter(product => product._id !== id))
       remove(id)
     }
   }
@@ -28,9 +28,6 @@ function ProductAdmin() {
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
-              <th scope="col" className="px-6 py-3">
-                STT
-              </th>
               <th scope="col" className="px-6 py-3">
                 Title
               </th>
@@ -59,10 +56,7 @@ function ProductAdmin() {
           </thead>
           <tbody>
             {products.map(product => (
-              <tr className="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600" key={product.id}>
-                <th scope="row" className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
-                  {product.id}
-                </th>
+              <tr className="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600" key={product._id}>
                 <th scope="row" className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
                   {product.title}
                 </th>
@@ -85,11 +79,11 @@ function ProductAdmin() {
                   {product.categoryId}
                 </td>
                 <td className="px-6 py-4 text-center flex justify-between">
-                  <Link to={`/admin/product/${product.id}`} className="bg-blue-500 rounded-lg font-bold text-white text-center px-3 py-2 transition duration-300 ease-in-out hover:bg-blue-600 mr-2">Detail</Link>
-                  <Link to={`/admin/product/edit/${product.id}`} className="bg-blue-500 rounded-lg font-bold text-white text-center px-3 py-2 transition duration-300 ease-in-out hover:bg-blue-600 mr-2">Edit</Link>
+                  <Link to={`/admin/product/${product._id}`} className="bg-blue-500 rounded-lg font-bold text-white text-center px-3 py-2 transition duration-300 ease-in-out hover:bg-blue-600 mr-2">Detail</Link>
+                  <Link to={`/admin/product/edit/${product._id}`} className="bg-blue-500 rounded-lg font-bold text-white text-center px-3 py-2 transition duration-300 ease-in-out hover:bg-blue-600 mr-2">Edit</Link>
                   <button
                     className="bg-blue-500 rounded-lg font-bold text-white text-center px-3 py-2 transition duration-300 ease-in-out hover:bg-blue-600 mr-2"
-                    onClick={() => handleRemove(product.id)}
+                    onClick={() => handleRemove(product._id)}
                   >
                     Delete
                   </button>

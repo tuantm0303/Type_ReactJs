@@ -14,21 +14,29 @@ import ClientPage from "./pages/client";
 import CategoryOutlet from "./pages/admin/categories/CategoryOutlet";
 import CategoryAdmin from "./pages/admin/categories";
 import FormCategory from "./pages/admin/categories/FormCategory";
-import CategoryDetail from "./pages/admin/posts/PostDetail";
+import CategoryDetail from "./pages/admin/categories/CategoryDetail";
 import SignIn from "./components/SignIn";
 import SignUp from "./components/SignUp";
 import UserOutlet from "./pages/admin/users/userOutlet";
 import UserAdmin from "./pages/admin/users";
+import ProductOnCategory from "./components/ProductOnCategory";
+import CartPage from "./components/CartPage";
 
 function App() {
   return (
     <div className="App">
       <Routes>
         <Route path="/" element={<ClientPage />} />
-        <Route path="/signin" element={<SignIn />} />
-        <Route path="/signup" element={<SignUp />} />
+        <Route path="/SamSung" element={<ProductOnCategory />} />
+        <Route path="/Iphone" element={<ProductOnCategory />} />
+        <Route path="/SamSung" element={<ProductOnCategory />} />
+        <Route path="/Huewai" element={<ProductOnCategory />} />
+        <Route path="/Xiaomi" element={<ProductOnCategory />} />
+        <Route path="/Nokia" element={<ProductOnCategory />} />
+        <Route path="/cart" element={<CartPage />} />
+        <Route path="signin" element={<SignIn />} />
+        <Route path="signup" element={<SignUp />} />
         <Route path="admin" element={<Admin />}>
-          {/* category */}
           <Route path="category" element={<CategoryOutlet />}>
             <Route index element={<CategoryAdmin />} />
             <Route path="add" element={<FormCategory />} />

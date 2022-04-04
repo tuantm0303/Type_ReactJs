@@ -5,7 +5,7 @@ import { postType } from '../../type';
 
 type Props = {}
 
-function CategoryDetail(props: Props) {
+function PostsDetail(props: Props) {
   const { id } = useParams()
 
   const [post, setPost] = useState<postType>()
@@ -18,7 +18,7 @@ function CategoryDetail(props: Props) {
   useEffect(() => {
     getPostDetail()
   }, [])
-  
+
   return (
     <div className='bg-red-500 text-center'>
       <h2>Title: {post?.title}</h2>
@@ -31,4 +31,4 @@ function CategoryDetail(props: Props) {
   );
 }
 
-export default CategoryDetail
+export default PostsDetail
