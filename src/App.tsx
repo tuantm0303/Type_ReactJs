@@ -28,11 +28,7 @@ function App() {
     <div className="App">
       <Routes>
         <Route path="/" element={<ClientPage />} />
-        <Route path="/SamSung" element={<ProductOnCategory />} />
-        <Route path="/Iphone" element={<ProductOnCategory />} />
-        <Route path="/Huewai" element={<ProductOnCategory />} />
-        <Route path="/Xiaomi" element={<ProductOnCategory />} />
-        <Route path="/Nokia" element={<ProductOnCategory />} />
+        <Route path="/:name" element={<ProductOnCategory />} />
         <Route path="/detail/:id" element={<DetailPage />} />
         <Route path="/cart" element={<CartPage />} />
         <Route path="signin" element={<SignIn />} />
