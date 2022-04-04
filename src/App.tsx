@@ -64,13 +64,6 @@ function App() {
           </Route>
         </Route>
       </Routes>
-
-      <div className="navbar">
-        <ul>
-          <li><Link to="/">Home</Link></li>
-          <li><Link to="/admin/post">Admin</Link></li>
-        </ul>
-      </div>
     </div>
   );
 }

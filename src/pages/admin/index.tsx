@@ -5,6 +5,13 @@ function Admin() {
   return (
     <>
       <header className="w-full bg-gray-800 p-4 flex justify-between items-center"></header>
+      <div className="flex bg-gray-800 items-center cursor-pointer p-2 pr-2">
+        <svg xmlns="http://www.w3.org/2000/svg" className="icon icon-tabler icon-tabler-chevron-left text-white" width="16" height="16" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <polyline points="15 6 9 12 15 18" />
+        </svg>
+        <Link to="/" className="text-sm pl-2 leading-none text-white">Back Home</Link>
+      </div>
       <main className="flex w-full h-full">
         <aside className="w-80 bg-gray w-fulll hidden sm:block">
           <div className="flex flex-col justify-between h-full p-4 bg-gray-800">
