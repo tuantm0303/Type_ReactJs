@@ -12,6 +12,7 @@ function ProductLists() {
     }
     getProducts()
   }, [])
+
   return (
     <div className="product-show flex flex-wrap px-20 space-evenly">
       {products.map(product => (
@@ -51,7 +52,7 @@ function ProductLists() {
               <button className="tags border-2 rounded-xl h-7 w-11 bg-red-500 text-white-500">New</button>
             </div>
             <div className="pro-img ">
-              <Link to="#">
+              <Link to={`/detail/${product._id}`}>
                 <img src={product.image} alt={product.image} className="w-[385px] h-[261]" />
                 {/* <img src="https://mcdn2-coolmate.cdn.vccloud.vn/uploads/December2021/densoro_copy_450x663.jpg" alt="https://mcdn2-coolmate.cdn.vccloud.vn/uploads/December2021/densoro_copy_450x663.jpg" className="w-[385px] h-[261] hidden group-hover:block group-hover:filter group-hover:scale-125 transition-all transform duration-500 object-cover z-10" /> */}
               </Link>
