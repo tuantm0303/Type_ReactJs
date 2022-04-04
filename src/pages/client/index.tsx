@@ -2,6 +2,7 @@ import Header from '../../components/Header'
 import Footer from '../../components/Footer'
 import Banner from '../../components/Banner'
 import ProductLists from '../../components/ProductLists'
+import ImgBanner from '../../components/ImgBanner'
 
 function ClientPage() {
   return (
@@ -9,6 +10,7 @@ function ClientPage() {
       <Header />
       <Banner />
       <ProductLists />
+      <ImgBanner />
       <Footer />
     </>
   )
