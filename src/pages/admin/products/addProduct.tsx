@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { add } from '../../api/product'
-import type { categoryType, productType } from '../../type'
+import type { categoryType } from '../../type'
 import { useForm, SubmitHandler } from "react-hook-form";
 import { listCate } from '../../api/category';
 
@@ -26,11 +26,8 @@ function AddProduct() {
       setCategories(data)
     })()
   }, [])
-  console.log(categories);
 
   const onSubmit: SubmitHandler<FormInputsName> = async (product: any) => {
-    console.log(product);
-
     try {
       const { data } = await add(product)
       navigate('/admin/product')
@@ -68,7 +65,7 @@ function AddProduct() {
             type="number"
             placeholder='PriceOld'
             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600"
-            {...register("priceOld", { required: true, valueAsNumber: true })} //valueAsNumber convert number
+            {...register("priceOld", { valueAsNumber: true })} //valueAsNumber convert number
           />
           {errors.priceOld && <span style={{ color: "red" }}>This field is required</span>}
         </div>
@@ -77,7 +74,7 @@ function AddProduct() {
             type="number"
             placeholder='PriceNew'
             className="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600"
-            {...register("priceNew", { valueAsNumber: true })} //valueAsNumber convert number
+            {...register("priceNew", { required: true, valueAsNumber: true })} //valueAsNumber convert number
           />
           {errors.priceNew && <span style={{ color: "red" }}>This field is required</span>}
         </div>

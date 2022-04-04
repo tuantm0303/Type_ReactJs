@@ -17,7 +17,7 @@ function ProductOnCategory() {
   return (
     <>
       <Header />
-      <div className="product-show flex flex-wrap px-20 space-evenly">
+      <div className="product-show flex flex-wrap space-evenly items-center pb-10">
         {products.map(product => (
           <div key={product._id} className="group products p-1 pb-5 border-2 border-solid border-gray-400 m-3 w-[275px] rounded-lg shadow-2xl relative">
             <div className="product-img relative">
