@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Link, Route, Routes } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { listCate } from '../pages/api/category'
 import { categoryType } from '../pages/type'
 
@@ -14,8 +14,19 @@ function Header() {
     getCategories()
   }, [])
 
+  const signout = () => {
+    localStorage.removeItem("user")
+  }
+
   return (
     <header className="header-main px-[10%] text-center h-[100px]">
+      <ul className='flex p-5 justify-end text-center leading-[10px]'>
+        <li className='px-2 hover:opacity-70 font-semibold'><Link to="/admin" className='hover:border-b-2 hover:border-solid hover:border-blue-400'>Admin</Link></li>
+        <li className='px-2 hover:opacity-70 font-semibold'><Link to="/signin" className='hover:border-b-2 hover:border-solid hover:border-blue-400'>Signin</Link></li>
+        <li className='px-2 hover:opacity-70 font-semibold'><Link to="/signup" className='hover:border-b-2 hover:border-solid hover:border-blue-400'>Signup</Link></li>
+        <li className='px-2 hover:opacity-70 font-semibold'><button onClick={() => signout()} className='hover:border-b-2 font-semibold hover:border-solid hover:border-blue-400'>Signout</button></li>
+      </ul>
+      <hr />
       <div className="row-menu flex justify-between">
         <div className="logo"><Link to="/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/99/e9/b9/99e9b974-b824-15c3-1eea-59669fa296d6/AppIconSSPV6-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/1200x630wa.png" alt="" className="logo-img h-[100px] " /></Link></div>
         <div className="nav-menu">

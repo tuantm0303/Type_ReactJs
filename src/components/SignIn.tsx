@@ -14,8 +14,8 @@ function SignIn() {
   const { register, handleSubmit, formState: { errors } } = useForm<InputValue>()
   const navigate = useNavigate()
   const onSubmit: SubmitHandler<InputValue> = async (data) => {
-    await signin(data)
-    localStorage.setItem("user", JSON.stringify(data));
+    const { data: user } = await signin(data)
+    localStorage.setItem("user", JSON.stringify(user));
     navigate("/")
   }
 
@@ -27,7 +27,7 @@ function SignIn() {
             Sign In
             <div className="pt-10 pr-20">
               <label className="text-sm font-sans font-medium">
-                Username
+                Email
               </label>
               <input
                 type="text"

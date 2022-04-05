@@ -6,7 +6,7 @@ export const list = () => {
 }
 
 export const signup = (user: any) => {
-  const url = `/users`;
+  const url = `/signup`;
   return instance.post(url, user);
 }
 

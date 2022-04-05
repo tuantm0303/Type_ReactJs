@@ -16,7 +16,7 @@ function SignUp() {
   const navigate = useNavigate()
   const onSubmit: SubmitHandler<InputValue> = async (user: any) => {
     const { data } = await signup(user)
-    localStorage.setItem("user", JSON.stringify(data.user));
+    localStorage.setItem("user", JSON.stringify({ name: data.name, email: data.email }));
     setUsers([...users, data])
     navigate("/")
   }
