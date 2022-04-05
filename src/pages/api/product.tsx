@@ -22,8 +22,12 @@ export const add = (product: any) => {
 }
 
 export const remove = (_id: number | string) => {
-  const url = `/products/${_id}`;
-  return instance.delete(url);
+  const url = `/products/${_id}/${user?.user._id}`;
+  return instance.delete(url, {
+    headers: {
+      "Authorization": `Bearer ${user?.token}`
+    }
+  });
 }
 
 export const read = (id: number | string | undefined) => {
@@ -32,6 +36,10 @@ export const read = (id: number | string | undefined) => {
 }
 
 export const update = (product: any) => {
-  const url = `/products/${product._id}`;
-  return instance.put(url, product);
+  const url = `/products/${product._id}/${user?.user._id}`;
+  return instance.put(url, product, {
+    headers: {
+      "Authorization": `Bearer ${user?.token}`
+    }
+  });
 }
