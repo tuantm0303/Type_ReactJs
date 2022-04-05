@@ -14,9 +14,9 @@ function ProductLists() {
   }, [])
 
   return (
-    <div className="product-show flex flex-wrap space-evenly mx-auto items-center pb-10">
+    <div className="product-show flex flex-wrap space-evenly mx-auto pb-10 relative">
       {products.map(product => (
-        <div key={product._id} className="group products p-1 pb-5 border-2 border-solid border-gray-400 m-3 w-[275px] rounded-lg shadow-2xl relative">
+        <div key={product._id} className="group products p-1 mx-auto pb-5 border-2 border-solid border-gray-400 m-3 w-[275px] rounded-lg shadow-2xl relative">
           <div className="product-img relative">
             <div className="product-reviews flex justify-between w-full absolute z-20">
               <div className="star-quantily flex">
@@ -53,7 +53,7 @@ function ProductLists() {
             </div>
             <div className="pro-img ">
               <Link to={`/detail/${product._id}`}>
-                <img src={product.image} alt={product.image} className="w-[385px] h-[270px]" />
+                <img src={product.image} alt={product.image} className="w-[385px] h-[270px] object-cover" />
                 {/* <img src="https://mcdn2-coolmate.cdn.vccloud.vn/uploads/December2021/densoro_copy_450x663.jpg" alt="https://mcdn2-coolmate.cdn.vccloud.vn/uploads/December2021/densoro_copy_450x663.jpg" className="w-[385px] h-[261] hidden group-hover:block group-hover:filter group-hover:scale-125 transition-all transform duration-500 object-cover z-10" /> */}
               </Link>
             </div>
@@ -64,7 +64,7 @@ function ProductLists() {
               </button>
             </div>
             <div className="product-heading pl-2 relative bg-white py-5">
-              <h3 className="product-title font-semibold">{product.title}</h3>
+              <h3 className="product-title font-semibold text-sm">{product.title}</h3>
               <div className="product-price">
                 <div rel-script="product-price" className="product-prices flex">
                   <ins className="text-red-500 text-sm pr-5">{product.priceNew}</ins>
