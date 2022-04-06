@@ -6,7 +6,7 @@ function Banner() {
 
     <>
       <Slider />
-      <div className="service-container flex justify-between py-20 px-[10%] relative">
+      <div className="service-container flex justify-between py-20 px-[10%]">
         <div className="service-transport flex">
           <div className="service-icon">
             <svg xmlns="http://www.w3.org/2000/svg" className="h-12 w-8 p-1" viewBox="0 0 20 20" fill="currentColor">

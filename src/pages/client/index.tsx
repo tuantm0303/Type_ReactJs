@@ -3,32 +3,17 @@ import Footer from '../../components/Footer'
 import Banner from '../../components/Banner'
 import ProductLists from '../../components/ProductLists'
 import ImgBanner from '../../components/ImgBanner'
-import SlickSlider from '../../components/SlickSlider'
+import SimpleSlider from '../../components/SimpleSlider'
 
 function ClientPage() {
   return (
     <>
-      {/* <div className="relative"> */}
-
       <Header />
-      {/* </div> */}
-      {/* <div className="relative"> */}
       <Banner />
-
-      {/* </div> */}
-      {/* <div className="relative"> */}
       <ProductLists />
-
-      {/* </div> */}
-      {/* <div className="relative"> */}
       <ImgBanner />
-
-      {/* </div> */}
-      <SlickSlider />
-      {/* <div className='relative'>  */}
+      {/* <SimpleSlider /> */}
       <Footer />
-      {/* </div> */}
-
     </>
   )
 }

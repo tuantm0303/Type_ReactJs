@@ -19,7 +19,7 @@ function Header() {
   }
 
   return (
-    <header className="header-main px-[10%] text-center h-[100px] relative">
+    <header className="header-main px-[10%] text-center h-[100px]">
       <ul className='flex p-5 justify-end text-center leading-[10px]'>
         <li className='px-2 hover:opacity-70 font-semibold'><Link to="/admin" className='hover:border-b-2 hover:border-solid hover:border-blue-400'>Admin</Link></li>
         <li className='px-2 hover:opacity-70 font-semibold'><Link to="/signin" className='hover:border-b-2 hover:border-solid hover:border-blue-400'>Signin</Link></li>
