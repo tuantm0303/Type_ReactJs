@@ -7,7 +7,8 @@ export type productType = {
   sale: string,
   desc: string,
   status: number,
-  categoryId: string
+  categoryId: string,
+  slug: string
 }
 
 export type postType = {

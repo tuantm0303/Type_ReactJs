@@ -25,8 +25,8 @@ export const remove = (_id: number | string) => {
   });
 }
 
-export const read = (id: number | string | undefined) => {
-  const url = `/products/${id}`;
+export const read = (slug: any) => {
+  const url = `/products/${slug}`;
   return instance.get(url);
 }
 
@@ -39,8 +39,8 @@ export const update = (product: any) => {
   });
 }
 
-export const search = (keyword: any) => {
-  const url = `/search?q=${keyword}`
+export const search = (key: string) => {
+  const url = `/search?q=${key}`
   console.log(url)
   return instance.get(url)
 }

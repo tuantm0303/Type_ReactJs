@@ -79,8 +79,8 @@ function ProductAdmin() {
                   {product.categoryId}
                 </td>
                 <td className="px-6 py-4 text-center flex justify-between">
-                  <Link to={`/admin/product/${product._id}`} className="bg-blue-500 rounded-lg font-bold text-white text-center px-3 py-2 transition duration-300 ease-in-out hover:bg-blue-600 mr-2">Detail</Link>
-                  <Link to={`/admin/product/edit/${product._id}`} className="bg-blue-500 rounded-lg font-bold text-white text-center px-3 py-2 transition duration-300 ease-in-out hover:bg-blue-600 mr-2">Edit</Link>
+                  <Link to={`/admin/product/${product.slug}`} className="bg-blue-500 rounded-lg font-bold text-white text-center px-3 py-2 transition duration-300 ease-in-out hover:bg-blue-600 mr-2">Detail</Link>
+                  <Link to={`/admin/product/edit/${product.slug}`} className="bg-blue-500 rounded-lg font-bold text-white text-center px-3 py-2 transition duration-300 ease-in-out hover:bg-blue-600 mr-2">Edit</Link>
                   <button
                     className="bg-blue-500 rounded-lg font-bold text-white text-center px-3 py-2 transition duration-300 ease-in-out hover:bg-blue-600 mr-2"
                     onClick={() => handleRemove(product._id)}

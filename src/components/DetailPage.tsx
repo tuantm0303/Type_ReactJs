@@ -2,16 +2,14 @@ import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
 import { read } from '../pages/api/product'
 import { productType } from '../pages/type'
-import Footer from './Footer'
-import Header from './Header'
 
 function DetailPage() {
   const [product, setProduct] = useState<productType>()
   const { id } = useParams()
 
   useEffect(() => {
-    const getProduct = async (id: number | string | undefined) => {
-      const { data } = await read(id)
+    const getProduct = async (slug: any) => {
+      const { data } = await read(slug)
       setProduct(data)
     }
     getProduct(id)

@@ -53,7 +53,7 @@ function ProductLists() {
                 <button className="tags border-2 rounded-xl h-7 w-11 bg-red-500 text-white-500">New</button>
               </div>
               <div className="pro-img ">
-                <Link to={`/detail/${product._id}`}>
+                <Link to={`/detail/${product?.slug}`}>
                   <img src={product.image} alt={product.image} className="w-[385px] h-[270px] object-cover" />
                   {/* <img src="https://mcdn2-coolmate.cdn.vccloud.vn/uploads/December2021/densoro_copy_450x663.jpg" alt="https://mcdn2-coolmate.cdn.vccloud.vn/uploads/December2021/densoro_copy_450x663.jpg" className="w-[385px] h-[261] hidden group-hover:block group-hover:filter group-hover:scale-125 transition-all transform duration-500 object-cover z-10" /> */}
                 </Link>
