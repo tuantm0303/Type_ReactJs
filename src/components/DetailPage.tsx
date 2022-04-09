@@ -19,7 +19,6 @@ function DetailPage() {
 
   return (
     <>
-      <Header />
       <div className="max-w-5xl mx-auto grid grid-cols-2 gap-10 my-10">
         <div className="img-product">
           <img src={product?.image} alt={product?.image} />
@@ -41,7 +40,6 @@ function DetailPage() {
           </div>
         </div>
       </div>
-      <Footer />
     </>
   )
 }

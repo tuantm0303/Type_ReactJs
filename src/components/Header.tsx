@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import { listCate } from '../pages/api/category'
 import { search } from '../pages/api/product'
 import { categoryType } from '../pages/type'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function Header() {
   const [categories, setCategories] = useState<categoryType[]>([])
@@ -16,18 +18,19 @@ function Header() {
   useEffect(() => {
     const getCategories = async () => {
       const { data } = await listCate()
-      console.log(data)
       setCategories(data)
     }
     getCategories()
   }, [])
 
   const signout = () => {
-    localStorage.removeItem("user")
+    localStorage.removeItem("user");
+    (() => toast.success("Bạn đã đăng xuất"))()
   }
 
   return (
     <header className="header-main text-center h-[100px]">
+      <ToastContainer />
       <ul className='flex p-5 justify-end text-center leading-[10px]'>
         <li className='px-2 hover:opacity-70 font-semibold'><Link to="/admin" className='hover:border-b-2 hover:border-solid hover:border-blue-400'>Admin</Link></li>
         <li className='px-2 hover:opacity-70 font-semibold'><Link to="/signin" className='hover:border-b-2 hover:border-solid hover:border-blue-400'>Signin</Link></li>

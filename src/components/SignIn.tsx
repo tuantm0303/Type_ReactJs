@@ -3,6 +3,8 @@ import { useForm, SubmitHandler } from 'react-hook-form'
 import { Link, useNavigate } from 'react-router-dom'
 import { signin } from '../pages/api/user'
 import { userType } from '../pages/type'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 type InputValue = {
   name: string,
@@ -16,6 +18,7 @@ function SignIn() {
   const onSubmit: SubmitHandler<InputValue> = async (data) => {
     const { data: user } = await signin(data)
     localStorage.setItem("user", JSON.stringify(user));
+    (() => toast.success("Đăng nhập thành công"))()
     navigate("/")
   }
 
@@ -35,6 +38,7 @@ function SignIn() {
                 className="w-full bg-black py-3 px-12 border hover: border-gray-500 rounded shadow text-base font-sans"
                 {...register("email", { required: true })}
               />
+              {errors.email && <span style={{ color: "red", fontSize: 16 }}>This field is required</span>}
             </div>
             <div className="pt-2 pr-20">
               <label className="text-sm font-sans font-medium">
@@ -46,6 +50,7 @@ function SignIn() {
                 className=" w-full bg-black py-3 px-12 border hover: border-gray-500 rounded shadow text-base font-sans"
                 {...register("password", { required: true })}
               />
+              {errors.password && <span style={{ color: "red", fontSize: 16 }}>This field is required</span>} <br />
               <a href="" className="text-sm font-sans font-medium text-gray-600 underline">
                 Forgot password?
               </a>

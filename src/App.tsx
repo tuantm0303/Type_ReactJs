@@ -22,17 +22,22 @@ import UserAdmin from "./pages/admin/users";
 import ProductOnCategory from "./components/ProductOnCategory";
 import CartPage from "./components/CartPage";
 import DetailPage from "./components/DetailPage";
+import OutletPage from "./pages/client/OutletPage";
 
 function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/" element={<ClientPage />} />
-        <Route path="/:id" element={<ProductOnCategory />} />
-        <Route path="/detail/:id" element={<DetailPage />} />
-        <Route path="/cart" element={<CartPage />} />
         <Route path="signin" element={<SignIn />} />
         <Route path="signup" element={<SignUp />} />
+        <Route path="/cart" element={<CartPage />} />
+
+        <Route path="/" element={<OutletPage />}>
+          <Route index element={<ClientPage />} />
+          <Route path="/:id" element={<ProductOnCategory />} />
+          <Route path="/detail/:id" element={<DetailPage />} />
+        </Route>
+
         <Route path="admin" element={<Admin />}>
           <Route path="category" element={<CategoryOutlet />}>
             <Route index element={<CategoryAdmin />} />
