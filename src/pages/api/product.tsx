@@ -7,11 +7,6 @@ export const list = () => {
   return instance.get(url)
 }
 
-// export const add = (product: any) => {
-//   const url = `/products`;
-//   return instance.post(url, product);
-// }
-
 export const add = (product: any) => {
   const url = `/products/${user?.user._id}`;
   return instance.post(url, product, {
@@ -42,4 +37,10 @@ export const update = (product: any) => {
       "Authorization": `Bearer ${user?.token}`
     }
   });
+}
+
+export const search = (keyword: any) => {
+  const url = `/search?q=${keyword}`
+  console.log(url)
+  return instance.get(url)
 }
