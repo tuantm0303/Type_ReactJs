@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
-import { add, readCate, update } from '../../api/category'
+import { add, read, update } from '../../api/category'
 import type { categoryType } from '../../type'
 import { useForm, SubmitHandler } from "react-hook-form";
 
@@ -10,7 +10,7 @@ type FormInputsName = {
 
 function FormCategory() {
   const [categories, setCategories] = useState<categoryType[]>([])
-  const { register, reset, handleSubmit, formState: { errors } } = useForm<FormInputsName>()
+  const { reset, register, handleSubmit, formState: { errors } } = useForm<FormInputsName>()
   const navigate = useNavigate()
   const { id } = useParams()
 
@@ -22,10 +22,13 @@ function FormCategory() {
   }
 
   // lấy DL cũ
-  const readCategory = async (id: any) => {
-    const { data } = await readCate(id)
-    reset(data)
-  }
+  useEffect(() => {
+    const readCategory = async (id: number | string | undefined) => {
+      const { data } = await read(id)
+      reset(data)
+    }
+    readCategory(id)
+  }, [id])
 
   // sửa DL mới
   const updateCategory = async (category: categoryType) => {

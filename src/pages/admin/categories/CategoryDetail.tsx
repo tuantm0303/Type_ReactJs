@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import { readCate } from '../../api/category';
+import { read } from '../../api/category';
 import type { categoryType } from '../../type';
 
 type Props = {}
@@ -11,8 +11,7 @@ function CategoryDetail(props: Props) {
   const [category, setCategory] = useState<categoryType>()
 
   const getCategoryDetail = async () => {
-    const { data } = await readCate(id)
-    console.log(data.category.name)
+    const { data } = await read(id)
     setCategory(data)
   }
 
