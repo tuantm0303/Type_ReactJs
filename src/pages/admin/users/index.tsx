@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
-import { Link, Outlet } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
+import { toast, ToastContainer } from 'react-toastify'
 import { list, remove } from '../../api/user'
 import type { userType } from '../../type'
 
@@ -17,11 +18,13 @@ function UserAdmin() {
   const handleRemove = async (id: number | string) => {
     if (window.confirm('Are you sure delete??')) {
       setUsers(users.filter(user => user._id !== id))
-      remove(id)
+      remove(id);
+      (() => toast.success("Xóa người dùng thành công!!"))()
     }
   }
   return (
     <>
+      <ToastContainer />
       <h2 className='text-3xl font-semibold text-center text-gray-800 pb-10'>Manager Uses</h2>
       <div className="w-full relative overflow-x-auto shadow-md sm:rounded-lg">
         <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">

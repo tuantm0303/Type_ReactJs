@@ -1,6 +1,8 @@
 import React, { useState } from 'react'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { signup } from '../pages/api/user'
 import { userType } from '../pages/type'
 
@@ -16,9 +18,12 @@ function SignUp() {
   const navigate = useNavigate()
   const onSubmit: SubmitHandler<InputValue> = async (user: any) => {
     const { data } = await signup(user)
-    localStorage.setItem("user", JSON.stringify({ name: data.name, email: data.email }));
-    setUsers([...users, data])
-    navigate("/")
+    setUsers([...users, data]);
+    (() => toast.success('Tạo tài khoản thành công!!'))()
+    setTimeout(() => {
+      localStorage.setItem("user", JSON.stringify({ name: data.name, email: data.email }));
+      navigate('/')
+    }, 2000)
   }
 
   return (
@@ -71,6 +76,7 @@ function SignUp() {
       <div className="banner col-span-8 text-white font-sans font-bold">
         <img className='bg-cover bg-no-repeat h-full' src="https://s1.1zoom.me/b6058/448/Dogs_Svetlana_Shelemeteva_Hug_Little_girls_568770_1920x1080.jpg" alt="" />
       </div>
+      <ToastContainer />
     </div>
   )
 }

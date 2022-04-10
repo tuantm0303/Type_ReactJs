@@ -3,6 +3,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 import { add, read, update } from '../../api/category'
 import type { categoryType } from '../../type'
 import { useForm, SubmitHandler } from "react-hook-form";
+import { toast } from 'react-toastify';
 
 type FormInputsName = {
   name: string,
@@ -18,7 +19,8 @@ function FormCategory() {
   const addCategory = async (category: any) => {
     const { data } = await add(category)
     setCategories([...categories, data])
-    navigate('/admin/category')
+    navigate('/admin/category');
+    (() => toast.success("Thêm danh mục thành công!!"))()
   }
 
   // lấy DL cũ
@@ -34,7 +36,8 @@ function FormCategory() {
   const updateCategory = async (category: categoryType) => {
     const { data } = await update(category)
     setCategories([...categories, data])
-    navigate('/admin/category')
+    navigate('/admin/category');
+    (() => toast.success("Sửa danh mục thành công!!"))()
   }
 
   const onSubmit: SubmitHandler<FormInputsName> = async (category: any) => {

@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import { Link, Outlet } from 'react-router-dom'
 import { listCate, remove } from '../../api/category'
 import { categoryType } from '../../type'
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function CategoryAdmin() {
   const [categories, setCategories] = useState<categoryType[]>([])
@@ -17,11 +19,13 @@ function CategoryAdmin() {
   const handleRemove = async (id: number | string) => {
     if (window.confirm('Are you sure delete??')) {
       setCategories(categories.filter(category => category._id !== id))
-      remove(id)
+      remove(id);
+      (() => toast.success("Xóa danh mục thành công!!"))()
     }
   }
   return (
     <>
+      <ToastContainer />
       <h2 className='text-3xl font-semibold text-center text-gray-800'>Manager Categories</h2>
       <Link to={`/admin/category/add`} className="border-2 border-blue-500 float-right rounded-lg font-bold text-blue-500 px-3 py-2 transition duration-300 ease-in-out hover:bg-blue-500 hover:text-white mb-5">ADD</Link>
       <div className="w-full relative overflow-x-auto shadow-md sm:rounded-lg">

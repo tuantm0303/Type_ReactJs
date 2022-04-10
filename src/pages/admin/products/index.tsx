@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 import { Link, Outlet } from 'react-router-dom'
+import { toast, ToastContainer } from 'react-toastify'
 import { list, remove } from '../../api/product'
-import type { categoryType, productType } from '../../type'
+import type { productType } from '../../type'
 
 function ProductAdmin() {
 
@@ -17,11 +18,13 @@ function ProductAdmin() {
   const handleRemove = async (id: number | string) => {
     if (window.confirm('Are you sure delete??')) {
       setProducts(products.filter(product => product._id !== id))
-      remove(id)
+      remove(id);
+      (() => toast.success("Xóa sản phẩm thành công!!"))()
     }
   }
   return (
     <>
+      <ToastContainer />
       <h2 className='text-3xl font-semibold text-center text-gray-800'>Manager Products</h2>
       <Link to={`/admin/product/add`} className="border-2 border-blue-500 float-right rounded-lg font-bold text-blue-500 px-3 py-2 transition duration-300 ease-in-out hover:bg-blue-500 hover:text-white mb-5">ADD</Link>
       <div className="w-full relative overflow-x-auto shadow-md sm:rounded-lg">

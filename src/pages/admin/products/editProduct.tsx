@@ -4,6 +4,7 @@ import { read, update } from '../../api/product'
 import type { categoryType, productType } from '../../type'
 import { useForm, SubmitHandler } from "react-hook-form";
 import { listCate } from '../../api/category';
+import { toast } from 'react-toastify';
 
 type FormInputsName = {
   title: string,
@@ -42,7 +43,8 @@ function EditProduct() {
     console.log(product)
     const { data } = await update(product)
     setProducts([...products, data])
-    navigate('/admin/product')
+    navigate('/admin/product');
+    (() => toast.success("Sửa sản phẩm thành công!!"))()
   }
 
   return (

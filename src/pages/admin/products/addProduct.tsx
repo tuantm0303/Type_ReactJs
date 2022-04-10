@@ -4,6 +4,7 @@ import { add } from '../../api/product'
 import type { categoryType } from '../../type'
 import { useForm, SubmitHandler } from "react-hook-form";
 import { listCate } from '../../api/category';
+import { toast } from 'react-toastify';
 
 type FormInputsName = {
   title: string,
@@ -30,7 +31,8 @@ function AddProduct() {
   const onSubmit: SubmitHandler<FormInputsName> = async (product: any) => {
     try {
       const { data } = await add(product)
-      navigate('/admin/product')
+      navigate('/admin/product');
+      (() => toast.success("Thêm sản phẩm thành công!!"))()
     } catch (error: any) {
       console.log(error.response.data.error)
     }
