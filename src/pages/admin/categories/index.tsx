@@ -29,6 +29,9 @@ function CategoryAdmin() {
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
               <th scope="col" className="px-6 py-3">
+                STT
+              </th>
+              <th scope="col" className="px-6 py-3">
                 Name
               </th>
               <th scope="col" className="px-6 py-3">
@@ -37,8 +40,11 @@ function CategoryAdmin() {
             </tr>
           </thead>
           <tbody>
-            {categories.map(category => (
+            {categories.map((category, index) => (
               <tr className="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600" key={category._id}>
+                <td className="px-6 py-4">
+                  {index + 1}
+                </td>
                 <td className="px-6 py-4">
                   {category.name}
                 </td>

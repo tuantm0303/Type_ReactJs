@@ -8,12 +8,12 @@ import 'react-toastify/dist/ReactToastify.css';
 
 function Header() {
   const [categories, setCategories] = useState<categoryType[]>([])
-  const handleSearch = () => {
-    (async (keyword) => {
-      const data = await search(keyword)
-      console.log(data)
-    })()
-  }
+  // useEffect(() => {
+  //   (async (keyword) => {
+  //     const { data } = await search(keyword)
+  //     console.log(data)
+  //   })()
+  // }, [])
 
   useEffect(() => {
     const getCategories = async () => {
@@ -48,10 +48,8 @@ function Header() {
           </ul>
         </div>
         <div className="menu-icon flex my-[30px]">
-          <form action="" className='flex'
-            onClick={() => handleSearch()}
-          >
-            <input type="text" name="search" placeholder="Nhập từ khoá để tìm kiếm..." required />
+          <form action="" className='flex'>
+            <input type="text" placeholder="Nhập từ khoá để tìm kiếm..." required />
             <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mx-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
               <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
             </svg>

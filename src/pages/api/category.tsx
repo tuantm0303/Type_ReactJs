@@ -9,7 +9,6 @@ export const listCate = () => {
 
 export const add = (category: any) => {
   const url = `/categories/${user?.user._id}`;
-  console.log(url)
   return instance.post(url, category, {
     headers: {
       "Authorization": `Bearer ${user?.token}`

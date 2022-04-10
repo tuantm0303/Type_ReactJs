@@ -29,6 +29,9 @@ function ProductAdmin() {
           <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
             <tr>
               <th scope="col" className="px-6 py-3">
+                STT
+              </th>
+              <th scope="col" className="px-6 py-3">
                 Title
               </th>
               <th scope="col" className="px-6 py-3">
@@ -55,8 +58,11 @@ function ProductAdmin() {
             </tr>
           </thead>
           <tbody>
-            {products.map(product => (
+            {products.map((product, index) => (
               <tr className="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600" key={product._id}>
+                <th scope="row" className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
+                  {index + 1}
+                </th>
                 <th scope="row" className="px-6 py-4 font-medium text-gray-900 dark:text-white whitespace-nowrap">
                   {product.title}
                 </th>
