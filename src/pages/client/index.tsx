@@ -6,7 +6,9 @@ function ClientPage() {
   return (
     <>
       <Outlet />
-      <ProductLists />
+      <ProductLists
+        title="Tất cả sản phẩm"
+      />
       <ImgBanner />
       {/* <SimpleSlider /> */}
     </>

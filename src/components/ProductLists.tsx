@@ -3,7 +3,11 @@ import { Link, Outlet } from 'react-router-dom'
 import { list } from '../pages/api/product'
 import type { productType } from '../pages/type/index'
 
-function ProductLists() {
+type Props = {
+  title: any
+}
+
+function ProductLists({ title }: Props) {
   const [products, setProducts] = useState<productType[]>([])
   useEffect(() => {
     const getProducts = async () => {
@@ -15,6 +19,7 @@ function ProductLists() {
 
   return (
     <>
+      <h2 className='font-bold text-3xl pb-5 pl-2'>{title}</h2>
       <div className="product-show flex flex-wrap space-evenly mx-auto pb-10 relative">
         {products.map(product => (
           <div key={product._id} className="group products p-1 mx-auto pb-5 border-2 border-solid border-gray-400 m-3 w-[275px] rounded-lg shadow-2xl relative">
@@ -55,7 +60,6 @@ function ProductLists() {
               <div className="pro-img ">
                 <Link to={`/detail/${product?.slug}`}>
                   <img src={product.image} alt={product.image} className="w-[385px] h-[270px] object-cover" />
-                  {/* <img src="https://mcdn2-coolmate.cdn.vccloud.vn/uploads/December2021/densoro_copy_450x663.jpg" alt="https://mcdn2-coolmate.cdn.vccloud.vn/uploads/December2021/densoro_copy_450x663.jpg" className="w-[385px] h-[261] hidden group-hover:block group-hover:filter group-hover:scale-125 transition-all transform duration-500 object-cover z-10" /> */}
                 </Link>
               </div>
               <div className="group-hover:translate-y-[-50px] w-[95%] product-btn relative translate-y-[60px] duration-100 mx-auto">

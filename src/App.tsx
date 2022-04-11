@@ -24,6 +24,7 @@ import CartPage from "./components/CartPage";
 import DetailPage from "./components/DetailPage";
 import OutletPage from "./pages/client/OutletPage";
 import EditUser from "./pages/admin/users/editUser";
+import SearchPage from "./components/SearchPage";
 
 function App() {
   return (
@@ -31,7 +32,8 @@ function App() {
       <Routes>
         <Route path="signin" element={<SignIn />} />
         <Route path="signup" element={<SignUp />} />
-        <Route path="/cart" element={<CartPage />} />
+        <Route path="cart" element={<CartPage />} />
+        <Route path="search" element={<SearchPage />} />
 
         <Route path="/" element={<OutletPage />}>
           <Route index element={<ClientPage />} />

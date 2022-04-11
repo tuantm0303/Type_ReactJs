@@ -39,8 +39,7 @@ export const update = (product: any) => {
   });
 }
 
-export const search = (key: string) => {
+export const search = (key: any) => {
   const url = `/search?q=${key}`
-  console.log(url)
   return instance.get(url)
 }
