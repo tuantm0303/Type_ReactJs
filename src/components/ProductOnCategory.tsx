@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link, Outlet, useParams } from 'react-router-dom'
 import { readProOnCate } from '../pages/api/category'
 import type { categoryType, productType } from '../pages/type/index'
+import { formatter } from '../utils/formatterPrice'
 
 function ProductOnCategory() {
   const { id } = useParams()
@@ -73,8 +74,8 @@ function ProductOnCategory() {
                 <h3 className="product-title font-semibold text-sm">{product.title}</h3>
                 <div className="product-price">
                   <div rel-script="product-price" className="product-prices flex">
-                    <ins className="text-red-500 text-sm pr-5">{product.priceNew}</ins>
-                    <del className="text-xs">{product.priceOld}</del>
+                    <ins className="text-red-500 text-sm pr-5">{formatter.format(product.priceNew)}</ins>
+                    <del className="text-xs">{formatter.format(product.priceOld)}</del>
                     <span className="text-red-500 text-sm px-5">{product.sale}</span>
                   </div>
                 </div>

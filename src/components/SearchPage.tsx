@@ -2,8 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link, Outlet, useSearchParams } from 'react-router-dom';
 import { search } from '../pages/api/product'
 import { productType } from '../pages/type'
-import Footer from './Footer';
-import Header from './Header';
+import { formatter } from '../utils/formatterPrice';
 
 function SearchPage() {
   const [searchParams] = useSearchParams();
@@ -18,7 +17,6 @@ function SearchPage() {
 
   return (
     <>
-      <Header />
       <div className="product-show flex space-evenly pb-10 relative">
         {products.map(product => (
           <div key={product._id} className="group products p-1 pb-5 border-2 border-solid border-gray-400 m-3 w-[275px] rounded-lg shadow-2xl relative">
@@ -71,8 +69,8 @@ function SearchPage() {
                 <h3 className="product-title font-semibold text-sm">{product.title}</h3>
                 <div className="product-price">
                   <div rel-script="product-price" className="product-prices flex">
-                    <ins className="text-red-500 text-sm pr-5">{product.priceNew}</ins>
-                    <del className="text-xs">{product.priceOld}</del>
+                    <ins className="text-red-500 text-sm pr-5">{formatter.format(product.priceNew)}</ins>
+                    <del className="text-xs">{formatter.format(product.priceOld)}</del>
                     <span className="text-red-500 text-sm px-5">{product.sale}</span>
                   </div>
                 </div>
@@ -84,7 +82,6 @@ function SearchPage() {
         ))}
       </div>
       <Outlet />
-      <Footer />
     </>
   )
 }
