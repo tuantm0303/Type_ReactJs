@@ -1,4 +1,6 @@
 import instance from "./instance";
+import { isAuthenticate } from "../../utils/localStorage";
+const users = isAuthenticate()
 
 export const list = () => {
   const url = `/users`;
@@ -21,6 +23,15 @@ export const signin = (user: any) => {
 };
 
 export const update = (user: any) => {
-  const url = `/users/${user.id}`;
-  return instance.put(url, user);
+  const url = `/users/${user._id}/${users?.user._id}`;
+  return instance.patch(url, user, {
+    headers: {
+      "Authorization": `Bearer ${users?.token}`
+    }
+  });
+}
+
+export const read = (_id: number | string | undefined) => {
+  const url = `/users/${_id}`;
+  return instance.get(url);
 }

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { Outlet } from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom'
 import { toast, ToastContainer } from 'react-toastify'
 import { list, remove } from '../../api/user'
 import type { userType } from '../../type'
@@ -69,6 +69,7 @@ function UserAdmin() {
                   >
                     Delete
                   </button>
+                  <Link to={`/admin/user/edit/${user._id}`} className="bg-blue-500 rounded-lg font-bold text-white text-center px-3 py-2 transition duration-300 ease-in-out hover:bg-blue-600 mr-2">Edit</Link>
                 </td>
               </tr>
             ))}

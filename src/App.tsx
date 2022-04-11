@@ -23,6 +23,7 @@ import ProductOnCategory from "./components/ProductOnCategory";
 import CartPage from "./components/CartPage";
 import DetailPage from "./components/DetailPage";
 import OutletPage from "./pages/client/OutletPage";
+import EditUser from "./pages/admin/users/editUser";
 
 function App() {
   return (
@@ -49,7 +50,7 @@ function App() {
           {/* user */}
           <Route path="user" element={<UserOutlet />}>
             <Route index element={<UserAdmin />} />
-            <Route path="add" element={<FormCategory />} />
+            <Route path="edit/:id" element={<EditUser />} />
           </Route>
 
           {/* product */}
