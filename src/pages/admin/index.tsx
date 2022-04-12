@@ -32,6 +32,29 @@ function Admin() {
         </aside>
         <section className="w-full p-4">
           <div className="w-full h-full border-dashed border-4 p-4 text-md">
+
+            <div className="flex-grow py-12 px-10">
+              <div className="flex justify-between">
+                <div>
+                  <h4 className="text-sm font-bold text-indigo-600">Hi Andrei,</h4>
+                  <h1 className="text-2xl font-bold text-indigo-900 mt-">Welcome to Trịnh Minh Tuấn</h1>
+                  <h1 className="text-2xl font-bold text-indigo-900 mt-">PH13096</h1>
+                </div>
+                <div>
+                  <div className="flex items-center border rounded-lg bg-white w-max py-2 px-4 space-x-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-gray-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                    <input className="outline-none" type="text" placeholder="Search" />
+                  </div>
+                </div>
+              </div>
+              <div>
+                <div className="flex mt-10 justify-center">
+                </div>
+              </div>
+            </div>
+
             <Outlet />
           </div>
         </section>

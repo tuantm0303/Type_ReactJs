@@ -33,10 +33,13 @@ function Header() {
       <>
         <ToastContainer />
         <header className="header-main text-center h-[100px]">
-          <ul className='flex p-5 justify-end text-center leading-[10px]'>
-            <li className='px-2 hover:opacity-70 font-semibold'><Link to="/admin" className='hover:border-b-2 hover:border-solid hover:border-blue-400'>{user.user.name}</Link></li>
-            <li className='px-2 hover:opacity-70 font-semibold'><button onClick={() => signout()} className='hover:border-b-2 font-semibold hover:border-solid hover:border-blue-400'>Signout</button></li>
-          </ul>
+          <div className="flex justify-between">
+            <div className="name-student px-[50px] leading-[50px]">PH13096 - TRỊNH MINH TUẤN</div>
+            <ul className='flex p-5 justify-end text-center leading-[10px]'>
+              <li className='px-2 hover:opacity-70 font-semibold'><Link to="/admin" className='hover:border-b-2 hover:border-solid hover:border-blue-400'>{user.user.name}</Link></li>
+              <li className='px-2 hover:opacity-70 font-semibold'><button onClick={() => signout()} className='hover:border-b-2 font-semibold hover:border-solid hover:border-blue-400'>Signout</button></li>
+            </ul>
+          </div>
           <hr />
           <div className="row-menu flex justify-between">
             <div className="logo"><Link to="/"><img src="https://is1-ssl.mzstatic.com/image/thumb/Purple126/v4/99/e9/b9/99e9b974-b824-15c3-1eea-59669fa296d6/AppIconSSPV6-0-0-1x_U007emarketing-0-0-0-7-0-0-sRGB-0-0-0-GLES2_U002c0-512MB-85-220-0-0.png/1200x630wa.png" alt="" className="logo-img h-[100px] " /></Link></div>

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import { read, update } from '../../api/user'
 import type { userType } from '../../type'
 import { useForm, SubmitHandler } from "react-hook-form";
@@ -32,6 +32,11 @@ function EditUser() {
 
   return (
     <div className="max-w-2xl mx-auto">
+      <Link to='../' className='border-2 border-blue-500 float-right rounded-lg font-bold text-blue-500 px-3 py-2 transition duration-300 ease-in-out hover:bg-blue-500 hover:text-white mb-5'>
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M10 19l-7-7m0 0l7-7m-7 7h18" />
+        </svg>
+      </Link>
       <h2 className='text-3xl font-semibold text-center text-gray-800'>Edit Product</h2>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="relative z-0 mb-6 w-full group">
