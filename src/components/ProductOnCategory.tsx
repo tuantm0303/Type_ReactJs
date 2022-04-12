@@ -10,14 +10,14 @@ function ProductOnCategory() {
   const [categories, setCategories] = useState<categoryType>()
   const [products, setProduct] = useState<productType[]>([])
 
-  const getProductDetail = async () => {
+  const getProOnCate = async () => {
     const { data } = await readProOnCate(id)
     setCategories(data.categoryId)
     setProduct(data.products)
   }
 
   useEffect(() => {
-    getProductDetail()
+    getProOnCate()
   }, [])
   return (
     <>
