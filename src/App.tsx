@@ -32,13 +32,13 @@ function App() {
       <Routes>
         <Route path="signin" element={<SignIn />} />
         <Route path="signup" element={<SignUp />} />
-        <Route path="cart" element={<CartPage />} />
 
         <Route path="/" element={<OutletPage />}>
           <Route index element={<ClientPage />} />
           <Route path="search" element={<SearchPage />} />
           <Route path="/:id" element={<ProductOnCategory />} />
           <Route path="/detail/:id" element={<DetailPage />} />
+          <Route path="cart" element={<CartPage />} />
         </Route>
 
         <Route path="admin" element={<Admin />}>

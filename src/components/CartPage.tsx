@@ -1,12 +1,11 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom'
 import Footer from './Footer'
 import Header from './Header'
 
 function CartPage() {
   return (
     <>
-      <Header />
       <div className="w-full h-full top-0 overflow-y-auto overflow-x-hidden sticky-0" id="chec-div">
         <div className="w-full flex justify-center z-10 right-0 h-full overflow-x-hidden transform translate-x-0 transition ease-in-out duration-700" id="checkout">
           <div className="lg:w-1/2 md:w-8/12 w-full lg:px-8 lg:py-14 md:px-6 px-4 md:py-8 py-4 bg-white overflow-y-hidden overflow-x-hidden h-auto" id="scroll">
@@ -72,7 +71,7 @@ function CartPage() {
           </div>
         </div>
       </div>
-      <Footer />
+      <Outlet />
     </>
   )
 }
