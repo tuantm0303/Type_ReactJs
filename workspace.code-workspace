@@ -1,11 +1,10 @@
 {
-	"folders": [
-		{
-			"path": "."
-		},
-		{
-			"path": "C:\\Users\\Admin\\Desktop\\WEB503_NodeJS"
-		}
-	],
-	"settings": {}
+  "folders": [
+    {
+      "path": "."
+    },
+    {
+      "path": "../../NodeJs/WEB503_NodeJs"
+    }
+  ]
 }
