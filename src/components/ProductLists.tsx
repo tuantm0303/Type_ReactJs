@@ -21,7 +21,7 @@ function ProductLists({ title }: Props) {
   return (
     <>
       <h2 className="font-bold text-3xl pb-5 pl-2">{title}</h2>
-      <div className="product-show flex flex-wrap space-evenly mx-auto pb-10 relative">
+      <div className="product-show grid grid-cols-4 flex-wrap space-evenly mx-auto pb-10 relative">
         {products.map((product) => (
           <div
             key={product._id}
